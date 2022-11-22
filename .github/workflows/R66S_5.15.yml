@@ -115,7 +115,7 @@ jobs:
         cd openwrt
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s || (curl -k --data chat_id="${{ env.TELEGRAM_CHAT_ID }}" --data "text=❌ OpenWrt ${{ env.VERSION }} ${{matrix.target}} 编译失败 😂" "https://api.telegram.org/bot${{ env.TELEGRAM_TOKEN }}/sendMessage";exit 1)
-        echo "::set-output name=status::success"
+        echo "status=success" >> $GITHUB_OUTPUT
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
         echo "FILE_DATE=_$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
@@ -138,7 +138,7 @@ jobs:
         cd openwrt/bin/targets/*/*
         rm -rf packages
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
-        echo "::set-output name=status::success"
+        echo "status=success" >> $GITHUB_OUTPUT
 
     - name: 上传固件
       uses: actions/upload-artifact@main
@@ -151,11 +151,12 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "::set-output name=release_tag::$(date +"%Y.%m.%d")-5.15"
-        echo "::set-output name=release_date::$(date +"%Y.%m.%d")"
-        touch release.txt
-        echo "内核 5.15" >> release.txt
-        echo "::set-output name=status::success"
+        time=$(date +%Y%m%d%H%M)
+        release_tag="R66S-OpenWrt-5.15-$time"
+        release_name="R66S-OpenWrt-5.15-$(date +%Y%m%d)"
+        echo "release_name=$release_name" >> $GITHUB_OUTPUT
+        echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
+        echo "status=success" >> $GITHUB_OUTPUT
         
     - name: 上传固件至项目
       uses: softprops/action-gh-release@v1
