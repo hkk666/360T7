@@ -27,9 +27,9 @@ env:
   REPO_URL: https://github.com/padavanonly/immortalwrtARM
   REPO_BRANCH: mt7981
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: ./config/360T7_immortalwrt.config
-  DIY_P1_SH: ./diy/diy-360T7_immortalwrt_1.sh
-  DIY_P2_SH: ./diy/diy-360T7_immortalwrt_2.sh
+  CONFIG_FILE: ./config/360T7-immortalwrt.config
+  DIY_P1_SH: ./diy/diy-360T7-immortalwrt-1.sh
+  DIY_P2_SH: ./diy/diy-360T7-immortalwrt-2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -63,7 +63,7 @@ jobs:
       if: env.TELEGRAM_TOKEN && ! contains(github.event.action, 'notg')
       continue-on-error: true
       run: |
-        curl -k --data chat_id="${{ env.TELEGRAM_CHAT_ID }}" --data "text=🎉 OpenWrt ${{ env.VERSION }} ${{matrix.target}} 开始编译 360 T7 固件 😋" "https://api.telegram.org/bot${{ env.TELEGRAM_TOKEN }}/sendMessage"        
+        curl -k --data chat_id="${{ env.TELEGRAM_CHAT_ID }}" --data "text=🎉 OpenWrt ${{ env.VERSION }} ${{matrix.target}} 开始编译 360T7-immortalwrt 固件 😋" "https://api.telegram.org/bot${{ env.TELEGRAM_TOKEN }}/sendMessage"        
     
     - name: 下载源码
       working-directory: /workdir
@@ -114,7 +114,7 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make -j$(nproc) || make -j1 || make -j1 V=s || (curl -k --data chat_id="${{ env.TELEGRAM_CHAT_ID }}" --data "text=❌ OpenWrt ${{ env.VERSION }} ${{matrix.target}} 编译失败 😂" "https://api.telegram.org/bot${{ env.TELEGRAM_TOKEN }}/sendMessage";exit 1)
+        make -j$(nproc) || make -j1 || make -j1 V=s || (curl -k --data chat_id="${{ env.TELEGRAM_CHAT_ID }}" --data "text=❌ OpenWrt ${{ env.VERSION }} ${{matrix.target}} 360T7-immortalwrt 固件编译失败 😂" "https://api.telegram.org/bot${{ env.TELEGRAM_TOKEN }}/sendMessage";exit 1)
         echo "status=success" >> $GITHUB_OUTPUT
         
     - name: 检查可用容量
@@ -162,4 +162,4 @@ jobs:
       if: env.TELEGRAM_TOKEN && ! contains(github.event.action, 'notg')
       continue-on-error: true
       run: |
-        curl -k --data chat_id="${{ env.TELEGRAM_CHAT_ID }}" --data "text=🎉 OpenWrt ${{ env.VERSION }} ${{matrix.target}} 360 T7 固件编译成功 😋" "https://api.telegram.org/bot${{ env.TELEGRAM_TOKEN }}/sendMessage"
+        curl -k --data chat_id="${{ env.TELEGRAM_CHAT_ID }}" --data "text=🎉 OpenWrt ${{ env.VERSION }} ${{matrix.target}} 360T7-immortalwrt 固件编译成功 😋" "https://api.telegram.org/bot${{ env.TELEGRAM_TOKEN }}/sendMessage"
