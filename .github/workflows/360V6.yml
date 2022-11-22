@@ -28,8 +28,8 @@ env:
   REPO_BRANCH: main
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: ./config/360V6.config
-  DIY_P1_SH: ./diy/diy-360V6_1.sh
-  DIY_P2_SH: ./diy/diy-360V6_2.sh
+  DIY_P1_SH: ./diy/diy-360V6-1.sh
+  DIY_P2_SH: ./diy/diy-360V6-2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
