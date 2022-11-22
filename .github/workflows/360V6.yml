@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: 360T7_hanwckf
+name: 360V6
 
 on:
   repository_dispatch:
