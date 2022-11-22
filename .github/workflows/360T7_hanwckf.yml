@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: 360T7_hanwckf
+name: 360T7-hanwckf
 
 on:
   repository_dispatch:
@@ -27,9 +27,9 @@ env:
   REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x
   REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: ./config/360T7_hanwckf.config
-  DIY_P1_SH: ./diy/diy-360T7_hanwckf_1.sh
-  DIY_P2_SH: ./diy/diy-360T7_hanwckf_2.sh
+  CONFIG_FILE: ./config/360T7-hanwckf.config
+  DIY_P1_SH: ./diy/diy-360T7-hanwckf-1.sh
+  DIY_P2_SH: ./diy/diy-360T7-hanwckf-2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
