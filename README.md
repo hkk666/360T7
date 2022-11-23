@@ -7,7 +7,7 @@
 
 <small>*如果为 ![](https://img.shields.io/badge/-falling-red) 也并不代表完全编译失败，请进入 [Actions](https://github.com/hkk666/OpenWrt-Actions/actions) 进一步查看</small>
 
-|项目|架构|状态|备注|
+|项目||状态|备注|
 |:-:|:-:|:-:|
 |LEDE|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/R66S-6.0?label=)|R66S-6.0|
 |LEDE|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/R66S-5.15?label=)|R66S-5.15|
