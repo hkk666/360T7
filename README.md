@@ -2,7 +2,6 @@
 <div align="center" ><img order-radius="200px" src="https://cdn.jsdelivr.net/gh/sun0225SUN/photos/images/202108300019556.gif"/></div><br>
 
 ##### 该项目可编译R66S\360V6\360T7
-
 ###### 感谢大佬们的源码和付出 
 
 - [Lean](https://github.com/coolsnowwolf/lede)
