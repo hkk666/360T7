@@ -1,5 +1,3 @@
-<h1 align="center"> <a href="https://sunguoqi.com/"> <img src="https://readme-typing-svg.herokuapp.com/?lines=欢迎使用！&center=true&size=30"> </a> </h1>
-
 
 # 该项目可云编译 R66S\360V6\360T7
 
