@@ -1,6 +1,6 @@
 <h1 align="center"> <a href="https://sunguoqi.com/"> <img src="https://readme-typing-svg.herokuapp.com/?lines=欢迎使用！&center=true&size=27"> </a> </h1>
-<div align="center" ><img order-radius="200px" src="https://cdn.jsdelivr.net/gh/sun0225SUN/photos/images/202108300019556.gif"/></div><br>
 
+<<<<<<< HEAD
 # 项目自动编译状态
 
 <small>*绿色标志![](https://img.shields.io/badge/-passing-brightgreen)则编译通过</small>
@@ -18,6 +18,10 @@
 
 
 #### 感谢大佬们的源码和付出 
+=======
+##### 该项目可云编译R66S\360V6\360T7
+###### 感谢大佬们的源码和付出 
+>>>>>>> 9c573f1c41a9b593ad7db084058d4bcef92197e1
 
 - [Lean](https://github.com/coolsnowwolf/lede)
 - [lorz](https://github.com/1orz/My-action)
