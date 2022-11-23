@@ -1,7 +1,8 @@
 <h1 align="center"> <a href="https://sunguoqi.com/"> <img src="https://readme-typing-svg.herokuapp.com/?lines=欢迎使用！&center=true&size=27"> </a> </h1>
 
-### 项目自动编译状态
+
 ### 该项目可云编译 R66S\360V6\360T7
+### 自动编译状态
 
 <small>*绿色标志![](https://img.shields.io/badge/-passing-brightgreen)则编译通过</small>
 
