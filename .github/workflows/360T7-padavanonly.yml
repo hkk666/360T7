@@ -50,11 +50,11 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
-        sudo bash -c 'bash <(curl -s https://build-scripts.immortalwrt.eu.org/init_build_environment.sh)' 
-        sudo timedatectl set-timezone "$TZ" 
-        sudo mkdir -p /workdir 
-        sudo chown $USER:$GROUPS /workdir
+        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
+        sudo bash -c 'bash <(curl -s https://build-scripts.immortalwrt.eu.org/init_build_environment.sh)'
+        sudo timedatectl set-timezone "$TZ"
+        sudo mkdir -p /workdir 
+        sudo chown $USER:$GROUPS /workdir
     
     - name: Telegram 通知
       if: env.TELEGRAM_TOKEN && ! contains(github.event.action, 'notg')
