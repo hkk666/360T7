@@ -10,7 +10,7 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 #修改默认IP
-#sed -i 's/192.168.1.1/192.168.50.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.50.1/g' package/base-files/files/bin/config_generate
 
 # Themes
 #git clone --depth 1 -b 18.06 https://github.com/padavanonly/immortalwrtARM/tree/mt7981/package/luci-theme-argon-new package/luci-theme-argon-new

@@ -1,5 +1,5 @@
 
-# 该项目可云编译 R66S\360V6\360T7
+# 该项目可云编译 R66S\360V6\360T7\Redmi-AX6000 OpenWrt
 
 # 自动编译状态
 
@@ -14,6 +14,7 @@
 |sdf8057|aarch64_cortex-a53|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/360V6?label=)|360V6-4.4.60|
 |hanwckf|aarch64_cortex-a53|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/360T7-hanwckf?label=)|360T7-hanwck|
 |padavanonly|aarch64_cortex-a53|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/360T7-immortalwrt?label=)|360T7-padavanonly|
+|padavanonly|aarch64_cortex-a53|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/Redmi-AX6000-padavanonly?label=)|Redmi-AX6000-padavanonly|
 
 ### 感谢大佬们的源码和付出 
 
