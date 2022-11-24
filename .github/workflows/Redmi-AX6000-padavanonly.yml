@@ -134,16 +134,17 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: 360T7-padavanonly-OpenWrt
+        name: Redmi-AX6000-padavanonly-padavanonly-OpenWrt
         path: ${{ env.FIRMWARE }}
 
     - name: 生成标签
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        time=$(date +%Y.%m.%d-%H:%M)
-        release_tag="Redmi-AX6000-padavanonly-OpenWrt-$time"
-        release_name="Redmi-AX6000-padavanonly-OpenWrt"
+        time=$(date +%Y.%m.%d)
+        Rtime=$(date +%Y.%m.%d-%H:%M)
+        release_tag="Redmi-AX6000-padavanonly-OpenWrt"
+        release_name="Redmi-AX6000-padavanonly-OpenWrt-$Rtime"
         echo "release_name=$release_name" >> $GITHUB_OUTPUT
         echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
         echo "status=success" >> $GITHUB_OUTPUT
