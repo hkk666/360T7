@@ -158,7 +158,6 @@ jobs:
       with:
         name: ${{ steps.tag.outputs.release_name }} 
         tag_name: ${{ steps.tag.outputs.release_tag }}
-        echo 
         files: ${{ env.FIRMWARE }}/*
 
     - name: Telegram 通知
