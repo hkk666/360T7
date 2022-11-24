@@ -142,8 +142,8 @@ jobs:
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
         time=$(date +%Y.%m.%d-%H:%M)
-        release_tag="360T7-padavanonly-OpenWrt"
-        release_name="360T7-padavanonly-OpenWrt-$time"
+        release_tag="360T7-padavanonly-OpenWrt-$time"
+        release_name="360T7-padavanonly-OpenWrt"
         echo "release_name=$release_name" >> $GITHUB_OUTPUT
         echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
         echo "status=success" >> $GITHUB_OUTPUT
