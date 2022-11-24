@@ -6,7 +6,6 @@ on:
  #- cron: '0 20 * * 1'
 
 jobs:
-  Delete-Workflow-Archive:
     runs-on: ubuntu-latest
     steps:
     - name: 生成标签
