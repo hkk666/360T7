@@ -140,7 +140,7 @@ jobs:
       run: |
         time=$(date +%Y.%m.%d)
         Rtime=$(date +%Y.%m.%d-%H:%M)
-        release_tag="360V6-OpenWrt-4.4.60"
+        release_tag="360V6-OpenWrt-4.4.60-$time"
         release_name="360V6-OpenWrt-4.4.60-$Rtime"
         echo "release_name=$release_name" >> $GITHUB_OUTPUT
         echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
