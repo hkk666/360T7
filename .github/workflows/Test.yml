@@ -23,8 +23,7 @@ jobs:
         time=$(date +%Y.%m.%d)
         Rtime=$(date +%Y.%m.%d-%H:%M)
         touch release.txt
-        echo "默认网关：192.168.50.1
-        默认密码：password" >> release.txt
+        echo "默认网关：192.168.50.1" >> release.txt
         release_tag="test-$time"
         release_name="test-$Rtime"
         echo "release_name=$release_name" >> $GITHUB_OUTPUT
