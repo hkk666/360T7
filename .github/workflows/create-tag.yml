@@ -6,8 +6,9 @@ on:
  #- cron: '0 20 * * 1'
 
 jobs:
-  build：
+  build:
     runs-on: ubuntu-latest
+    
     steps:
     - name: 生成标签
       id: tag
