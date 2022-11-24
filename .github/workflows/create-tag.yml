@@ -1,4 +1,4 @@
-name: Remove
+name: Create-tag
 
 on:
   workflow_dispatch:
