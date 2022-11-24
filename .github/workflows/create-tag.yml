@@ -20,7 +20,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        time=$(date +%Y.%m.%d-%H:%M)
+        time=$(date +%Y.%m.%d)
         Rtime=$(date +%Y.%m.%d-%H:%M)
         release_tag="test-$time"
         release_name="test-$Rtime"
