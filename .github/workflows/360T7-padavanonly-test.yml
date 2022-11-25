@@ -25,7 +25,7 @@ on:
 
 env:
   REPO_URL: https://github.com/hkk666/immortalwrtARM
-  REPO_BRANCH: patch-1
+  REPO_BRANCH: test
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: ./config/360T7-immortalwrt.config
   DIY_P1_SH: ./diy/diy-360T7-immortalwrt-1.sh
