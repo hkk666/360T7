@@ -1,7 +1,7 @@
 
 # 该项目可云编译 R66S\360V6\360T7\Redmi-AX6000 OpenWrt
 
-# 自动编译状态
+# 编译状态
 
 <small>*绿色标志![](https://img.shields.io/badge/-passing-brightgreen)则编译通过</small>
 
