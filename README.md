@@ -26,3 +26,7 @@
 - [sdf8057](https://github.com/sdf8057)
 - [hanwckf](https://github.com/hanwckf/immortalwrt-mt798x)
 - [padavanonly](https://github.com/padavanonly/immortalwrtARM)
+
+|          [天灵](https://github.com/1715173329)          |           [Lean](https://github.com/coolsnowwolf/lede)           |              [lorz](https://github.com/1orz/My-action)               |              [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)               |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| <img width="60" src="https://avatars.githubusercontent.com/u/22235437?v=4"/> | <img width="60" src="https://avatars.githubusercontent.com/u/31687149?v=4" /> | <img width="60" src="https://avatars.githubusercontent.com/u/31647663?v=4" /> | <img width="60" src="https://avatars.githubusercontent.com/u/25927179?v=4" /> |
