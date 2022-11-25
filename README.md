@@ -18,14 +18,14 @@
 
 ### 感谢大佬们的源码和付出 
 
-- [天灵](https://github.com/1715173329)
+<!-- - [天灵](https://github.com/1715173329)
 - [Lean](https://github.com/coolsnowwolf/lede)
 - [lorz](https://github.com/1orz/My-action)
 - [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)
 - [kenzok8](https://github.com/kenzok8/openwrt-packages)
 - [sdf8057](https://github.com/sdf8057)
 - [hanwckf](https://github.com/hanwckf/immortalwrt-mt798x)
-- [padavanonly](https://github.com/padavanonly/immortalwrtARM)
+- [padavanonly](https://github.com/padavanonly/immortalwrtARM) -->
 
 |          [天灵](https://github.com/1715173329)          |           [Lean](https://github.com/coolsnowwolf/lede)           |              [lorz](https://github.com/1orz/My-action)               |              [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)               |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
