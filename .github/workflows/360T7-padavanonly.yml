@@ -27,6 +27,7 @@ env:
   REPO_URL: https://github.com/padavanonly/immortalwrtARM
   REPO_BRANCH: mt7981
   FEEDS_CONF: feeds.conf.default
+  #CONFIG_FILE: ./config/360T7-immortalwrt.config
   CONFIG_FILE: ./config/360T7-immortalwrt-mini.config
   DIY_P1_SH: ./diy/diy-360T7-immortalwrt-1.sh
   DIY_P2_SH: ./diy/diy-360T7-immortalwrt-2.sh
