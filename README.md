@@ -7,13 +7,13 @@
 
 <small>*红色标志![](https://img.shields.io/badge/-falling-red) 可能是编译失败，请进入 [Actions](https://github.com/hkk666/OpenWrt-Actions/actions) 进一步查看详情</small>
 
-|项目|状态|备注|
+|源码|状态|备注|
 |:-:|:-:|:-:|
 |lede|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/R66S-6.0?label=)|R66S-6.0|
 |lede|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/R66S-5.15?label=)|R66S-5.15|
 |sdf8057|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/360V6?label=)|360V6-4.4.60|
 |hanwckf|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/360T7-hanwckf?label=)|360T7-hanwck|
-|padavanonly3|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/360T7-padavanonly?label=)|360T7-padavanonly|
+|padavanonly|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/360T7-padavanonly?label=)|360T7-padavanonly|
 |padavanonly|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/Redmi-AX6000-padavanonly?label=)|Redmi-AX6000-padavanonly|
 
 ### 感谢大佬们的源码和付出 
