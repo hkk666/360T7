@@ -18,6 +18,7 @@
 
 ### 感谢大佬们的源码和付出 
 
+- [天灵](https://github.com/1715173329)
 - [Lean](https://github.com/coolsnowwolf/lede)
 - [lorz](https://github.com/1orz/My-action)
 - [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)
