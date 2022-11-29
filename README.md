@@ -9,8 +9,8 @@
 
 |源码来源|编译状态|备注|
 |:-:|:-:|:-:|
-|lede|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/R66S-6.0?label=)|R66S-6.0|
-|lede|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/R66S-5.15?label=)|R66S-5.15|
+|lean|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/R66S-6.0?label=)|R66S-6.0|
+|lean|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/R66S-5.15?label=)|R66S-5.15|
 |sdf8057|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/360V6?label=)|360V6-4.4.60|
 |hanwckf|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/360T7-hanwckf?label=)|360T7-hanwck|
 |padavanonly|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/360T7-padavanonly?label=)|360T7-padavanonly|
@@ -19,7 +19,7 @@
 ### 感谢大佬们的源码和付出 
 
 <!-- - [天灵](https://github.com/1715173329)
-- [lede](https://github.com/coolsnowwolf/lede)
+- [lean](https://github.com/coolsnowwolf/lede)
 - [lorz](https://github.com/1orz/My-action)
 - [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)
 - [kenzok8](https://github.com/kenzok8/openwrt-packages)
@@ -27,7 +27,7 @@
 - [hanwckf](https://github.com/hanwckf/immortalwrt-mt798x)
 - [padavanonly](https://github.com/padavanonly/immortalwrtARM) -->
 
-|          [lede](https://github.com/coolsnowwolf/lede)         |        [天灵](https://github.com/1715173329)               |              [lorz](https://github.com/1orz/My-action)               |              [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)               |
+|          [lean](https://github.com/coolsnowwolf/lede)         |        [天灵](https://github.com/1715173329)               |              [lorz](https://github.com/1orz/My-action)               |              [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)               |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | <img width="60" src="https://avatars.githubusercontent.com/u/31687149?v=4"/> | <img width="60" src="https://avatars.githubusercontent.com/u/22235437?v=4" /> | <img width="60" src="https://avatars.githubusercontent.com/u/31647663?v=4" /> | <img width="60" src="https://avatars.githubusercontent.com/u/25927179?v=4" /> |
 |          [kenzok8](https://github.com/kenzok8/openwrt-packages)         |           [sdf8057](https://github.com/sdf8057)          |              [hanwckf](https://github.com/hanwckf/immortalwrt-mt798x)               |              [padavanonly](https://github.com/padavanonly/immortalwrtARM)               |
