@@ -13,6 +13,7 @@
 |lean|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/R66S-5.15?label=)|R66S-5.15|
 |sdf8057|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/360V6?label=)|360V6-4.4.60|
 |hanwckf|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/360T7-hanwckf?label=)|360T7-hanwck|
+|hanwckf|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/360T7-hanwckf-mini?label=)|360T7-hanwck-mini|
 |padavanonly|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/360T7-padavanonly?label=)|360T7-padavanonly|
 |padavanonly|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/Redmi-AX6000-padavanonly?label=)|Redmi-AX6000-padavanonly|
 
