@@ -164,3 +164,17 @@ jobs:
       continue-on-error: true
       run: |
         curl -k --data chat_id="${{ env.TELEGRAM_CHAT_ID }}" --data "text=🎉 OpenWrt ${{ env.VERSION }} ${{matrix.target}} 360T7-padavanonly-OpenWrt 固件编译成功 😋" "https://api.telegram.org/bot${{ env.TELEGRAM_TOKEN }}/sendMessage"
+
+    - name: '邮件通知'
+      uses: dawidd6/action-send-mail@master
+      if: steps.compile.outputs.status == 'success' && !cancelled()
+      with:
+         server_address: smtp.163.com
+         server_port: 465
+         username: ${{ secrets.MAILUSERNAME }}
+         password: ${{ secrets.MAILPASSWORD }}
+         subject: 🎉编译成功🎉
+         body: 360 T7-padavanonly-OpenWrt
+         to: 1689726513@qq.com
+         from: GitHub Actions
+         content_type: text/html
