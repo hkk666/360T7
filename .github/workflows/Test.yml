@@ -41,3 +41,16 @@ jobs:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
+        
+     - name: 'Send mail'
+       uses: dawidd6/action-send-mail@master
+       with:
+         serveraddress: smtp.163.com
+         serverport: 465
+         username: ${{ secrets.MAILUSERNAME }}
+         password: ${{ secrets.MAILPASSWORD }}
+         subject: Github Action
+         body: 开始编译
+         to: 1689726513@qq.com
+         from: GitHub Actions
+         content_type: text/html
