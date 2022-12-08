@@ -124,6 +124,7 @@ jobs:
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
         cd openwrt/bin/targets/*/*
+        tar -cvf packages.tar packages
         rm -rf feeds.buildinfo
         rm -rf *kernel*
         rm -rf *.manifest
