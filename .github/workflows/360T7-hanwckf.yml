@@ -123,7 +123,11 @@ jobs:
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
         cd openwrt/bin/targets/*/*
-        rm -rf packages
+        rm -rf feeds.buildinfo
+        rm -rf *kernel*
+        rm -rf *.manifest
+        rm -rf sha256sums
+        rm -rf version.buildinfo
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
@@ -131,7 +135,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: 360 T7-hanwckf-OpenWrt
+        name: 360T7-hanwckf-OpenWrt
         path: ${{ env.FIRMWARE }}
 
     - name: 生成标签
