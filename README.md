@@ -9,10 +9,10 @@
 
 |源码来源|编译状态|备注|
 |:-:|:-:|:-:|
-|hanwckf|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/360T7-hanwckf?label=)|360T7-hanwck|
-|hanwckf|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/360T7-hanwckf-mini?label=)|360T7-hanwck-mini|
-|padavanonly|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/360T7-padavanonly?label=)|360T7-padavanonly|
-|padavanonly|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/OpenWrt-Actions/360T7-padavanonly-mini?label=)|360T7-padavanonly-mini|
+|hanwckf|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/360T7/360T7-hanwckf?label=)|360T7-hanwck|
+|hanwckf|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/360T7/360T7-hanwckf-mini?label=)|360T7-hanwck-mini|
+|padavanonly|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/360T7/360T7-padavanonly?label=)|360T7-padavanonly|
+|padavanonly|![Compile Status](https://img.shields.io/github/workflow/status/hkk666/360T7/360T7-padavanonly-mini?label=)|360T7-padavanonly-mini|
 
 ### 感谢大佬们的源码和付出 
 
