@@ -13,7 +13,7 @@ env:
   
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     
     steps:
     - name: 生成标签
@@ -42,9 +42,9 @@ jobs:
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
         
-     - name: 'Send mail'
-       uses: dawidd6/action-send-mail@master
-       with:
+    - name: 'Send mail'
+      uses: dawidd6/action-send-mail@master
+      with:
          serveraddress: smtp.163.com
          serverport: 465
          username: ${{ secrets.MAILUSERNAME }}
