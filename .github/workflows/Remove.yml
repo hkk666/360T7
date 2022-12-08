@@ -2,8 +2,8 @@ name: Remove
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 20 * * 1'
+  #schedule:
+  # - cron: '0 20 * * 1'
 
 jobs:
   Delete-Workflow-Archive:
@@ -12,7 +12,7 @@ jobs:
     - name: 删除任务
       uses: GitRML/delete-workflow-runs@main
       with:
-        retain_days: 30
+        retain_days: 1
 
     - name: 移除旧项目
       uses: dev-drprasad/delete-older-releases@v0.1.0
