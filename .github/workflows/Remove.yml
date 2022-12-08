@@ -13,6 +13,7 @@ jobs:
       uses: GitRML/delete-workflow-runs@main
       with:
         retain_days: 1
+        keep_minimum_runs: 1
 
     - name: 移除旧项目
       uses: dev-drprasad/delete-older-releases@v0.1.0
