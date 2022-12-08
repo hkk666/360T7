@@ -7,7 +7,7 @@ on:
 
 jobs:
   Delete-Workflow-Archive:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
     - name: 删除任务
       uses: FunctionXJB/delete-workflow-runs@main
