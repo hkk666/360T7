@@ -16,34 +16,9 @@ jobs:
     runs-on: ubuntu-22.04
     
     steps:
-    - name: 生成标签
-      id: tag
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      run: |
-        time=$(date +%Y.%m.%d)
-        Rtime=$(date +%Y.%m.%d-%H:%M)
-        touch release.txt
-        echo "默认网关：192.168.50.1
-        默认密码：password" >> release.txt
-        release_tag="Test-$time"
-        release_name="Test-$Rtime"
-        echo "release_name=$release_name" >> $GITHUB_OUTPUT
-        echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
-        echo "status=success" >> $GITHUB_OUTPUT
-        
-    - name: 上传固件至项目
-      uses: softprops/action-gh-release@master
-      if: steps.tag.outputs.status == 'success' && !cancelled()
-      env:
-        GITHUB_TOKEN: ${{ secrets.GIT_USER_TOKEN }}
-      with:
-        name: ${{ steps.tag.outputs.release_name }} 
-        tag_name: ${{ steps.tag.outputs.release_tag }}
-        body_path: release.txt
-        files: ${{ env.FIRMWARE }}/*
-        
+       
     - name: 'Send mail'
-      uses: dawidd6/action-send-mail@master
+      uses: dawidd6/action-send-mail@v3
       with:
          server_address: smtp.163.com
          server_port: 465
@@ -53,4 +28,3 @@ jobs:
          body: 开始编译
          to: 1689726513@qq.com
          from: GitHub Actions
-         content_type: text/html
