@@ -123,11 +123,15 @@ jobs:
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
         cd openwrt/bin/targets/*/*
+        tar package.tar packages
         rm -rf feeds.buildinfo
         rm -rf *kernel*
         rm -rf *.manifest
         rm -rf sha256sums
         rm -rf version.buildinfo
+        sleep 2
+        mv immortalwrt-mediatek-mt7981-mt7981-360-t7-108M-squashfs-sysupgrade.bin 360T7-hanwckf-108M-sysupgrade.bin
+        mv immortalwrt-mediatek-mt7981-mt7981-360-t7-108M-squashfs-factory.bin 360T7-hanwckf-108M-factory.bin
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
