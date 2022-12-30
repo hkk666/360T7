@@ -43,6 +43,7 @@ jobs:
       if: steps.cacheHash.outputs.cache-hit != 'true'
       run: |
         echo ${{ steps.getHash.outputs.commitHash }} | tee .commitHash
+        git log -1 --stat >> text.txt
         
     - name: '邮件通知'
       uses: dawidd6/action-send-mail@master
@@ -53,7 +54,7 @@ jobs:
          username: ${{ secrets.MAILUSERNAME }}
          password: ${{ secrets.MAILPASSWORD }}
          subject: 🎉hanwckf 更新了源码🎉
-         body: https://github.com/hanwckf/immortalwrt-mt798x/commits/openwrt-21.02
+         body: file://text.txt
          to: 1689726513@qq.com
          from: GitHub Actions
          content_type: text/html
