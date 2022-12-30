@@ -30,6 +30,7 @@ jobs:
       id: getHash
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH .
+        git log -1 --stat >> text.txt
         echo "commitHash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
 
     - name: Compare Commit Hash
@@ -43,7 +44,6 @@ jobs:
       if: steps.cacheHash.outputs.cache-hit != 'true'
       run: |
         echo ${{ steps.getHash.outputs.commitHash }} | tee .commitHash
-        git log -1 --stat >> text.txt
         
     - name: '邮件通知'
       uses: dawidd6/action-send-mail@master
