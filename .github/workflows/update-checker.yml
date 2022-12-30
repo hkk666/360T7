@@ -53,7 +53,7 @@ jobs:
          server_port: 465
          username: ${{ secrets.MAILUSERNAME }}
          password: ${{ secrets.MAILPASSWORD }}
-         subject: 🎉hanwckf 更新了源码🎉
+         subject: hanwckf 更新了源码
          body: file://text.txt
          to: 1689726513@qq.com
          from: GitHub Actions
