@@ -47,7 +47,7 @@ jobs:
         
     - name: '邮件通知'
       uses: dawidd6/action-send-mail@master
-      if: steps.cacheHash.outputs.cache-hit != 'true' && !cancelled()
+#      if: steps.cacheHash.outputs.cache-hit != 'true' && !cancelled()
       with:
          server_address: smtp.163.com
          server_port: 465
