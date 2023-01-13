@@ -4,7 +4,7 @@
 
 <h1 align="center">
 
-360T7 OpenWrt
+GitHub Actions for 360T7 OpenWrt
 
 </h1>
 
