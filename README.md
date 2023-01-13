@@ -12,6 +12,13 @@
 
 <img src="https://img.shields.io/github/languages/code-size/srcrs/360T7?color=blueviolet">
 
+[![GitHub Stars](https://img.shields.io/github/stars/hkk666/360T7?style=flat-square)](https://github.com/hkk666/360T7/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/hkk666/360T7?style=flat-square)](https://github.com/hkk666/360T7/network)
+[![GitHub Issues](https://img.shields.io/github/issues/hkk666/360T7?style=flat-square)](https://github.com/hkk666/360T7/issues)
+[![GitHub Contributors](https://img.shields.io/github/contributors/hkk666/360T7?style=flat-square)](https://github.com/hkk666/360T7/graphs/contributors)
+[![GitHub All Releases](https://img.shields.io/github/downloads/hkk666/360T7/total?style=flat-square)](https://github.com/hkk666/360T7/releases)
+![GitHub Release (latest SemVer)](https://img.shields.io/github/v/release/hkk666/360T7?style=flat-square)
+
 </div>
 
 # 该项目可云编译 360T7 OpenWrt
