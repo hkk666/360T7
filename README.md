@@ -2,17 +2,18 @@
 
 <h1 align="center">360T7 OpenWrt</h1>
 
-<img src="https://img.shields.io/github/issues/srcrs/TiebaSignIn?color=green">
+<img src="https://img.shields.io/github/issues/srcrs/360T7?color=green">
 
-<img src="https://img.shields.io/github/stars/srcrs/TiebaSignIn?color=yellow">
+<img src="https://img.shields.io/github/stars/srcrs/360T7?color=yellow">
 
-<img src="https://img.shields.io/github/forks/srcrs/TiebaSignIn?color=orange">
+<img src="https://img.shields.io/github/forks/srcrs/360T7?color=orange">
 
-<img src="https://img.shields.io/github/license/srcrs/TiebaSignIn?color=ff69b4">
+<img src="https://img.shields.io/github/license/srcrs/360T7?color=ff69b4">
 
-<img src="https://img.shields.io/github/languages/code-size/srcrs/TiebaSignIn?color=blueviolet">
+<img src="https://img.shields.io/github/languages/code-size/srcrs/360T7?color=blueviolet">
 
 </div>
+
 # 该项目可云编译 360T7 OpenWrt
 
 <!--## 编译状态
