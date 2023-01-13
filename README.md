@@ -14,6 +14,7 @@ GitHub Actions For 360T7 OpenWrt
 [![GitHub Contributors](https://img.shields.io/github/contributors/hkk666/360T7?style=flat-square)](https://github.com/hkk666/360T7/graphs/contributors)
 [![GitHub All Releases](https://img.shields.io/github/downloads/hkk666/360T7/total?style=flat-square)](https://github.com/hkk666/360T7/releases)
 ![GitHub Release (latest SemVer)](https://img.shields.io/github/v/release/hkk666/360T7?style=flat-square)
+[![GitHub License](https://img.shields.io/github/license/hkk666/360T7?style=flat-square)](https://github.com/hkk666/360T7/blob/main/LICENSE)
 
 </div>
 
