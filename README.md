@@ -1,4 +1,4 @@
-![openwrt](docs/img/openwrt.png)
+![openwrt](doc/img/openwrt.png)
 
 <div align="center"> 
 
