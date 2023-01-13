@@ -1,4 +1,4 @@
-![openwrt](doc/img/openwrt.png)
+
 
 <div align="center"> 
 
@@ -16,6 +16,8 @@
 ![GitHub Release (latest SemVer)](https://img.shields.io/github/v/release/hkk666/360T7?style=flat-square)
 
 </div>
+
+![openwrt](doc/img/openwrt.png)
 
 **该项目可云编译 360T7 OpenWrt**
 
