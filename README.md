@@ -2,16 +2,6 @@
 
 <h1 align="center">360T7 OpenWrt</h1>
 
-<img src="https://img.shields.io/github/issues/srcrs/360T7?color=green">
-
-<img src="https://img.shields.io/github/stars/srcrs/360T7?color=yellow">
-
-<img src="https://img.shields.io/github/forks/srcrs/360T7?color=orange">
-
-<img src="https://img.shields.io/github/license/srcrs/360T7?color=ff69b4">
-
-<img src="https://img.shields.io/github/languages/code-size/srcrs/360T7?color=blueviolet">
-
 [![GitHub Stars](https://img.shields.io/github/stars/hkk666/360T7?style=flat-square)](https://github.com/hkk666/360T7/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/hkk666/360T7?style=flat-square)](https://github.com/hkk666/360T7/network)
 [![GitHub Issues](https://img.shields.io/github/issues/hkk666/360T7?style=flat-square)](https://github.com/hkk666/360T7/issues)
