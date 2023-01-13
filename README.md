@@ -11,7 +11,7 @@
 
 </div>
 
-**该项目可云编译 360T7 OpenWrt **
+**该项目可云编译 360T7 OpenWrt**
 
 <!--## 编译状态
 
@@ -26,7 +26,7 @@
 |padavanonly|![Compile Status](https://img.shields.io/github/actions/workflow/status/hkk666/360T7/sub_directory/360T7-padavanonly.yml?branch=main)|360T7-padavanonly|
 |padavanonly|![Compile Status](https://img.shields.io/github/actions/workflow/status/hkk666/360T7/sub_directory/360T7-padavanonly-mini.yml?branch=main)|360T7-padavanonly-mini| -->
 
-**感谢大佬们的源码和付出 **
+**感谢大佬们的源码和付出**
 
 <!-- - [天灵](https://github.com/1715173329)
 - [lean](https://github.com/coolsnowwolf/lede)
