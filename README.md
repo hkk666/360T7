@@ -2,7 +2,11 @@
 
 <div align="center"> 
 
-<h1 align="center">360T7 OpenWrt</h1>
+<h1 align="center">
+
+360T7 OpenWrt
+
+</h1>
 
 [![GitHub Stars](https://img.shields.io/github/stars/hkk666/360T7?style=flat-square)](https://github.com/hkk666/360T7/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/hkk666/360T7?style=flat-square)](https://github.com/hkk666/360T7/network)
