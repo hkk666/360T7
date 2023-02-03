@@ -21,7 +21,7 @@ env:
 
 jobs:
   Build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
@@ -112,6 +112,7 @@ jobs:
           RELEASE_TAG="360T7-hanwckf-mini-toolchain"
           echo "RELEASE_TAG=$RELEASE_TAG" >> $GITHUB_OUTPUT
           df -hT $PWD
+          echo "status=success" >> $GITHUB_OUTPUT
 
       - name: Upload Image To Release
         uses: softprops/action-gh-release@v1
@@ -123,7 +124,7 @@ jobs:
           
       - name: '邮件通知'
         uses: dawidd6/action-send-mail@v3
-        if: steps.compile.outputs.status == 'success' && !cancelled()
+        if: steps.generate.outputs.status == 'success' && !cancelled()
         with:
            server_address: smtp.163.com
            server_port: 465
