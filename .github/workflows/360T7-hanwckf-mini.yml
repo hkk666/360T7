@@ -73,7 +73,7 @@ jobs:
       uses: klever1988/cachewrtbuild@main
       with:
         ccache: 'true'
-        mixkey: 'ramips'
+        mixkey: 'aarch64_cortex-a53'
         prefix: 'openwrt'
         
     - name: 加载软件源
