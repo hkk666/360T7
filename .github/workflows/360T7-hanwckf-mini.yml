@@ -128,14 +128,7 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make tools/compile -j$(nproc) || make tools/compile -j1 V=s
-        make target/compile -j$(nproc) || make target/compile -j1 V=s
-        make diffconfig
-        make package/compile -j$(nproc) || make package/compile -j1 V=s
-        make package/index
-        make package/install -j$(nproc) || make package/install -j1 V=s
-        make target/install -j$(nproc) || make target/install -j1 V=s
-        make checksum
+        make -j$(nproc)
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: 检查可用容量
