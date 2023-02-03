@@ -36,8 +36,8 @@ env:
   SCKEY: ${{ secrets.SCKEY }}
   TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
   TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-  TOOLCHAIN_TAG: coolsnowwolf-lede-master
-  TOOLCHAIN_NAME: toolchain-image-coolsnowwolf-lede-master-bcm27xx-bcm2711.img
+  TOOLCHAIN_TAG: 360T7-hanwckf-mini-toolchain
+  TOOLCHAIN_NAME: toolchain-image-hanwckf-immortalwrt-mt798x-openwrt-21.02-mediatek-mt7981.img
   TZ: Asia/Shanghai
   
 jobs:
@@ -57,12 +57,6 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
-    
-    - name: Telegram 通知
-      if: env.TELEGRAM_TOKEN && ! contains(github.event.action, 'notg')
-      continue-on-error: true
-      run: |
-        curl -k --data chat_id="${{ env.TELEGRAM_CHAT_ID }}" --data "text=🎉 OpenWrt ${{ env.VERSION }} ${{matrix.target}} 开始编译 360 T7-hanwckf-mini 固件 😋" "https://api.telegram.org/bot${{ env.TELEGRAM_TOKEN }}/sendMessage"        
     
     - name: 下载源码
       working-directory: /workdir
@@ -84,6 +78,19 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
+        
+    - name: Prepare Toolchain Image
+        id: prepare
+        run: |
+          df -hT $PWD
+          sudo swapoff -a
+          sudo chown -R runner:runner /mnt
+          sudo rm -f /mnt/swapfile
+          wget -q https://github.com/hkk666/360T7/releases/download/$TOOLCHAIN_TAG/$TOOLCHAIN_NAME -O /mnt/toolchain-image.img
+          mkdir /mnt/openwrt-ro openwrt workdir overlay
+          sudo mount -o loop /mnt/toolchain-image.img /mnt/openwrt-ro
+          sudo mount -t overlay overlay -o lowerdir=/mnt/openwrt-ro,upperdir=overlay,workdir=workdir openwrt
+
 
     - name: 更新软件源
       run: cd openwrt && ./scripts/feeds update -a
@@ -121,7 +128,14 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make -j$(nproc) || make -j1 || make -j1 V=s || (curl -k --data chat_id="${{ env.TELEGRAM_CHAT_ID }}" --data "text=❌ OpenWrt ${{ env.VERSION }} ${{matrix.target}} 360 T7-hanwckf-mini-OpenWrt 固件编译失败 😂" "https://api.telegram.org/bot${{ env.TELEGRAM_TOKEN }}/sendMessage";exit 1)
+        make tools/compile -j$(nproc) || make tools/compile -j1 V=s
+        make target/compile -j$(nproc) || make target/compile -j1 V=s
+        make diffconfig
+        make package/compile -j$(nproc) || make package/compile -j1 V=s
+        make package/index
+        make package/install -j$(nproc) || make package/install -j1 V=s
+        make target/install -j$(nproc) || make target/install -j1 V=s
+        make checksum
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: 检查可用容量
@@ -174,12 +188,6 @@ jobs:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
-
-    - name: Telegram 通知
-      if: env.TELEGRAM_TOKEN && ! contains(github.event.action, 'notg')
-      continue-on-error: true
-      run: |
-        curl -k --data chat_id="${{ env.TELEGRAM_CHAT_ID }}" --data "text=🎉 OpenWrt ${{ env.VERSION }} ${{matrix.target}} 360 T7-hanwckf-mini-OpenWrt 固件编译成功 😋" "https://api.telegram.org/bot${{ env.TELEGRAM_TOKEN }}/sendMessage"
 
     - name: '邮件通知'
       uses: dawidd6/action-send-mail@v3
