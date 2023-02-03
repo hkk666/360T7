@@ -69,8 +69,8 @@ jobs:
       uses: klever1988/cachewrtbuild@main
       with:
         ccache: 'true'
-        mixkey: '360T7-hanwckf-mini'
-        prefix: 'openwrt-1'
+        mixkey: 'aarch64_cortex-a53'
+        prefix: 'openwrt'
         
     - name: 加载软件源
       run: |
@@ -87,7 +87,7 @@ jobs:
         sudo chown -R runner:runner /mnt
         sudo rm -f /mnt/swapfile
         wget -q https://github.com/hkk666/360T7/releases/download/$TOOLCHAIN_TAG/$TOOLCHAIN_NAME -O /mnt/toolchain-image.img
-        mkdir /mnt/openwrt-ro openwrt workdir overlay
+        mkdir /mnt/openwrt-ro workdir overlay
         sudo mount -o loop /mnt/toolchain-image.img /mnt/openwrt-ro
         sudo mount -t overlay overlay -o lowerdir=/mnt/openwrt-ro,upperdir=overlay,workdir=workdir openwrt
 
