@@ -1,0 +1,122 @@
+#=================================================
+# https://github.com/P3TERX/Actions-OpenWrt
+# Description: Build OpenWrt using GitHub Actions
+# Lisence: MIT
+# Author: P3TERX
+# Blog: https://p3terx.com
+#=================================================
+
+name: 360T7 Toolchain Build
+on:
+  workflow_dispatch:
+#  schedule:
+#    - cron: 0 18 * * *
+#  watch:
+#    types: started
+
+env:
+  REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x
+  REPO_BRANCH: openwrt-21.02
+  TZ: Asia/Shanghai
+
+jobs:
+  Build:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        PLATFORM: [MTK/MT7981]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Initialization Environment
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
+          sudo -E apt-get -qq update
+          sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-1804)
+          sudo -E apt-get -qq autoremove --purge
+          sudo -E apt-get -qq clean
+          sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+      - name: Clone Source Code
+        id: clone
+        run: |
+          df -hT $PWD
+          git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+          export REPO_USER="$(echo $REPO_URL | awk -F '/' '{print $(NF-1)}')"
+          echo "REPO_USER=$REPO_USER" >> $GITHUB_ENV
+          export REPO_NAME="$(echo $REPO_URL | awk -F '/' '{print $(NF)}')"
+          echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
+
+      - name: Install Feeds
+        id: feeds
+        run: |
+          cd openwrt
+          echo "OPENWRTROOT=$PWD" >> $GITHUB_ENV
+          ./scripts/feeds update -a 
+          ./scripts/feeds install -a
+
+      - name: Download Packages
+        env:
+          PLATFORM: ${{ matrix.PLATFORM }}
+        id: download
+        run: |
+          mv ./doc/config/$PLATFORM.config $OPENWRTROOT/.config
+          cd $OPENWRTROOT
+          make defconfig
+          make download -j8
+          find dl -size -1024c -exec ls -l {} \;
+          find dl -size -1024c -exec rm -f {} \;
+
+      - name: Compile Tools
+        id: tools
+        run: |
+          cd $OPENWRTROOT
+          echo -e "$(nproc) thread compile"
+          make tools/compile -j$(nproc) || make tools/compile -j1 V=s
+
+      - name: Compile Toolchain
+        id: toolchain
+        run: |
+          cd $OPENWRTROOT
+          echo -e "$(nproc) thread compile"
+          make toolchain/compile -j$(nproc) || make toolchain/compile -j1 V=s
+          make diffconfig
+          cd $OPENWRTROOT/bin/targets/*
+          TARGET=$(basename `pwd`)
+          echo "TARGET=$TARGET" >> $GITHUB_ENV
+          cd *
+          rm *
+          SUBTARGET=$(basename `pwd`)
+          echo "SUBTARGET=$SUBTARGET" >> $GITHUB_ENV
+
+      - name: Clean Files
+        id: clean
+        run: |
+          cd $OPENWRTROOT
+          make clean
+          rm -rf tmp logs .config* dl
+          ./scripts/feeds clean
+
+      - name: Generate Toolchain Image
+        id: generate
+        run: |
+          export FILE_NAME="toolchain-image-$REPO_USER-$REPO_NAME-$REPO_BRANCH-$TARGET-$SUBTARGET.img"
+          mksquashfs openwrt $FILE_NAME -force-gid 1001 -force-uid 1001 -comp xz
+          mkdir output
+          mv $FILE_NAME output
+          RELEASE_TAG="360T7-hanwckf-mini-toolchain"
+          echo "RELEASE_TAG=$RELEASE_TAG" >> $GITHUB_OUTPUT
+          df -hT $PWD
+
+      - name: Upload Image To Release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.generate.outputs.RELEASE_TAG }}
+          files: output/*
