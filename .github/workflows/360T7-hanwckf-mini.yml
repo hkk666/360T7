@@ -70,7 +70,7 @@ jobs:
       with:
         ccache: 'true'
         mixkey: 'aarch64_cortex-a53'
-        prefix: 'openwrt'
+        prefix: 'openwrt-1'
         
     - name: 加载软件源
       run: |
