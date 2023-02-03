@@ -109,7 +109,7 @@ jobs:
           mksquashfs openwrt $FILE_NAME -force-gid 1001 -force-uid 1001 -comp xz
           mkdir output
           mv $FILE_NAME output
-          RELEASE_TAG="360T7-hanwckf-mini-toolchain"
+          RELEASE_TAG="360T7-hanwckf-mini-toolchain-test"
           echo "RELEASE_TAG=$RELEASE_TAG" >> $GITHUB_OUTPUT
           df -hT $PWD
           echo "status=success" >> $GITHUB_OUTPUT
