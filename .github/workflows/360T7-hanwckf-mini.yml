@@ -67,7 +67,7 @@ jobs:
       uses: klever1988/cachewrtbuild@main
       with:
         ccache: 'true'
-        mixkey: 'aarch64_cortex-a53'
+        mixkey: '360T7'
         prefix: 'openwrt'
         
     - name: 加载软件源
@@ -97,7 +97,7 @@ jobs:
       run: |
         cd openwrt
         make defconfig
-        make download -j8
+        make download -j16
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 

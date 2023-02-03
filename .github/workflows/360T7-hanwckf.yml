@@ -67,7 +67,7 @@ jobs:
       uses: klever1988/cachewrtbuild@main
       with:
         ccache: 'true'
-        mixkey: 'aarch64_cortex-a53'
+        mixkey: '360T7'
         prefix: 'openwrt'
 
     - name: 加载软件源
