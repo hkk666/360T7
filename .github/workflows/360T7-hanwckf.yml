@@ -180,7 +180,6 @@ jobs:
       run: |
         curl -k --data chat_id="${{ env.TELEGRAM_CHAT_ID }}" --data "text=🎉 OpenWrt ${{ env.VERSION }} ${{matrix.target}} 360 T7-hanwckf-OpenWrt 固件编译成功 😋" "https://api.telegram.org/bot${{ env.TELEGRAM_TOKEN }}/sendMessage"
 
-
     - name: '邮件通知'
       uses: dawidd6/action-send-mail@v3
       if: steps.compile.outputs.status == 'success' && !cancelled()
@@ -191,5 +190,5 @@ jobs:
          password: ${{ secrets.MAILPASSWORD }}
          subject: 🎉编译成功🎉
          body: 360 T7-hanwckf-OpenWrt
-         to: 1689726513@qq.com
+         to: ${{ secrets.MAIL }}
          from: GitHub Actions

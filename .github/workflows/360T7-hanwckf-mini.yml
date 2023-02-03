@@ -36,6 +36,8 @@ env:
   SCKEY: ${{ secrets.SCKEY }}
   TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
   TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+  TOOLCHAIN_TAG: coolsnowwolf-lede-master
+  TOOLCHAIN_NAME: toolchain-image-coolsnowwolf-lede-master-bcm27xx-bcm2711.img
   TZ: Asia/Shanghai
   
 jobs:
@@ -189,7 +191,7 @@ jobs:
          password: ${{ secrets.MAILPASSWORD }}
          subject: 🎉编译成功🎉
          body: 360 T7-hanwckf-mini-OpenWrt
-         to: 1689726513@qq.com
+         to: ${{ secrets.MAIL }}
          from: GitHub Actions
          
     - name: 删除旧项目

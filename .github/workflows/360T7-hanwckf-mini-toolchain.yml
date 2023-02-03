@@ -120,3 +120,16 @@ jobs:
         with:
           tag_name: ${{ steps.generate.outputs.RELEASE_TAG }}
           files: output/*
+          
+      - name: '邮件通知'
+        uses: dawidd6/action-send-mail@v3
+        if: steps.compile.outputs.status == 'success' && !cancelled()
+        with:
+           server_address: smtp.163.com
+           server_port: 465
+           username: ${{ secrets.MAILUSERNAME }}
+           password: ${{ secrets.MAILPASSWORD }}
+           subject: 🎉360T7 Toolchain Build Success🎉
+           body: 360 T7-hanwckf-mini-Toolchain
+           to: ${{ secrets.MAIL }}
+           from: GitHub Actions

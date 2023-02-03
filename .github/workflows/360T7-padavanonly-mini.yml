@@ -185,5 +185,5 @@ jobs:
          password: ${{ secrets.MAILPASSWORD }}
          subject: 🎉编译成功🎉
          body: 360 T7-padavanonly-mini-OpenWrt
-         to: 1689726513@qq.com
+         to: ${{ secrets.MAIL }}
          from: GitHub Actions
