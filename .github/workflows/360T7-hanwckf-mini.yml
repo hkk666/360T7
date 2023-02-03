@@ -46,6 +46,14 @@ jobs:
     - name: 检查
       uses: actions/checkout@main
     
+            
+    - name: 缓存
+      uses: klever1988/cachewrtbuild@main
+      with:
+        ccache: 'true'
+        mixkey: 'ramips'
+        prefix: 'openwrt'
+    
     - name: 安装编译环境
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -68,13 +76,6 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-        
-    - name: 缓存
-      uses: klever1988/cachewrtbuild@main
-      with:
-        ccache: 'true'
-        mixkey: 'ramips'
-        prefix: 'openwrt'
 
     - name: 加载软件源
       run: |
