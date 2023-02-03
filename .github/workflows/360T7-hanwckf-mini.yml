@@ -36,7 +36,7 @@ env:
   SCKEY: ${{ secrets.SCKEY }}
   TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
   TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-  TOOLCHAIN_TAG: 360T7-hanwckf-mini-toolchain
+  TOOLCHAIN_TAG: 360T7-hanwckf-mini-toolchain-test
   TOOLCHAIN_NAME: toolchain-image-hanwckf-immortalwrt-mt798x-openwrt-21.02-mediatek-mt7981.img
   TZ: Asia/Shanghai
   
