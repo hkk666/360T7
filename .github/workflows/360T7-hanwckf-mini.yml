@@ -137,9 +137,6 @@ jobs:
         rm -rf *.manifest
         rm -rf sha256sums
         rm -rf version.buildinfo
-        sleep 2
-#        mv immortalwrt-mediatek-mt7981-mt7981-360-t7-108M-squashfs-sysupgrade.bin 360T7-hanwckf-108M-mini-sysupgrade.bin
-#        mv immortalwrt-mediatek-mt7981-mt7981-360-t7-108M-squashfs-factory.bin 360T7-hanwckf-108M-mini-factory.bin
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
