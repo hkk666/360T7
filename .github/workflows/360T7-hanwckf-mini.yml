@@ -14,9 +14,8 @@ on:
   repository_dispatch:
   workflow_dispatch:
     inputs:
-      ssh:
-        description: 'SSH connection to Actions'
-        required: false
+      clean:
+        description: 'clean ccache'
         default: 'false'
 
 #定时触发开始编译
@@ -30,10 +29,8 @@ env:
   CONFIG_FILE: ./doc/config/360T7-hanwckf-mini.config
   DIY_P1_SH: ./doc/diy/diy-360T7-hanwckf-1.sh
   DIY_P2_SH: ./doc/diy/diy-360T7-hanwckf-2.sh
-  UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
-  SCKEY: ${{ secrets.SCKEY }}
   TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
   TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
   TZ: Asia/Shanghai
@@ -63,13 +60,6 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         
-    - name: 缓存
-      uses: klever1988/cachewrtbuild@main
-      with:
-        ccache: 'true'
-        mixkey: '360T7'
-        prefix: 'openwrt'
-        
     - name: 加载软件源
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
@@ -79,7 +69,7 @@ jobs:
 
     - name: 更新软件源
       run: cd openwrt && ./scripts/feeds update -a
-
+      
     - name: 安装软件源
       run: cd openwrt && ./scripts/feeds install -a
 
@@ -91,7 +81,16 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-
+        
+    - name: 生成缓存
+      uses: klever1988/cachewrtbuild@main
+      with:
+        ccache: 'true'
+        mixkey: '360T7'
+        toolchain: 'true'
+        clean: ${{github.event.inputs.clean}}
+        prefix: ${{ github.workspace }}/openwrt
+        
     - name: 下载包
       id: package
       run: |
