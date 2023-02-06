@@ -21,4 +21,5 @@ jobs:
       with:
          max-age: 'P1W'
          keep-latest-releases: true
-         token: '${{ secrets.GITHUB_TOKEN }}'
+         delete-tags: true
+         token: '${{ github.token }}'
