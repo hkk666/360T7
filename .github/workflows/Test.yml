@@ -16,10 +16,9 @@ jobs:
     runs-on: ubuntu-22.04
     
     steps:
-    - name: 删除旧项目
-      uses: freenet-actions/delete-old-releases@v1
+    - name: Delete old releases
+      uses: docker://pivotalrabbitmq/delete-release-action:latest
       with:
-         max-age: 'P1W'
-         keep-latest-releases: true
-         delete-tags: true
-         token: '${{ github.token }}'
+         repository: rabbitmq/rabbitmq-java-tools-binaries-dev
+         token: ${{ secrets.GITHUB_TOKEN }}
+         keep-last-n: 2
