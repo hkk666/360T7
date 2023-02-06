@@ -1,0 +1,24 @@
+name: Test
+
+on:
+  workflow_dispatch:
+ #schedule:
+ #- cron: '0 20 * * 1'
+env:
+  UPLOAD_BIN_DIR: false
+  UPLOAD_FIRMWARE: true
+  UPLOAD_RELEASE: true
+
+  TZ: Asia/Shanghai
+  
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    
+    steps:
+    - name: 删除旧项目
+      uses: freenet-actions/delete-old-releases@v1
+      with:
+         max-age: 'P1W'
+         keep-latest-releases: true
+         token: '${{ secrets.GITHUB_TOKEN }}'
