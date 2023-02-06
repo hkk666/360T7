@@ -173,7 +173,6 @@ jobs:
     - name: 删除旧项目
       uses: freenet-actions/delete-old-releases@v1
       with:
-         prefix: 'develop-'  # Delete all releases starting with "develop-".
          max-age: 'P1W'      # Delete all releases older than one week.
          keep-latest-releases: true
          token: '${{ secrets.GITHUB_TOKEN }}'
