@@ -60,7 +60,7 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
     
-    - name: 生成缓存
+    - name: 加载缓存
       uses: klever1988/cachewrtbuild@main
       with:
         ccache: 'true'
