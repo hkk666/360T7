@@ -114,8 +114,8 @@ jobs:
          rm -rf *.manifest
          rm -rf sha256sums
          rm -rf version.buildinfo
-         mv immortalwrt-mediatek-mt7981-mt7981-360-t7-108M-squashfs-sysupgrade.bin 360T7-hanwckf-108M-mini-sysupgrade-$time.bin
-         mv immortalwrt-mediatek-mt7981-mt7981-360-t7-108M-squashfs-factory.bin 360T7-hanwckf-108M-mini-factory-$time.bin
+         mv *sysupgrade.bin 360T7-hanwckf-108M-mini-sysupgrade-$time.bin
+         mv *factory.bin 360T7-hanwckf-108M-mini-factory-$time.bin
          echo "FIRMWARE=$PWD" >> $GITHUB_ENV
          echo "status=success" >> $GITHUB_OUTPUT
 
@@ -131,9 +131,9 @@ jobs:
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
          time=$(date +%Y.%m.%d)
-         Rtime=$(date +%Y.%m.%d-%H:%M)
+         Dtime=$(date +%Y.%m.%d-%H:%M)
          release_tag="360T7-hanwckf-OpenWrt-mini-$time"
-         release_name="360T7-hanwckf-OpenWrt-mini-$Rtime"
+         release_name="360T7-hanwckf-OpenWrt-mini-$Dtime"
          echo "自用固件
          网关：192.168.50.1
          密码：password
@@ -170,12 +170,4 @@ jobs:
          subject: 🎉编译成功🎉
          body: https://github.com/hkk666/360T7/releases
          to: ${{ secrets.MAIL }}
-         from: GitHub Actions
-         
-    - name: 删除旧项目
-      uses: dev-drprasad/delete-older-releases@v0.2.0
-      with:
-        keep_latest: 3
-        delete_tags: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         from: GitHub Actions For 360T7 OpenWrt
