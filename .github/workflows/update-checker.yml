@@ -53,7 +53,7 @@ jobs:
       uses: peter-evans/repository-dispatch@v1
       with:
        token: ${{ secrets.ACTIONS_TRIGGER_PAT }}
-        event-type: Source Code Update
+       event-type: Source Code Update
 
     - name: Delete workflow runs
       uses: FunctionXJB/delete-workflow-runs@main
