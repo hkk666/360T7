@@ -106,6 +106,7 @@ jobs:
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
+         time=$(date +%Y.%m.%d-%H:%M)
          cd openwrt/bin/targets/*/*
          tar -cvf package.tar packages
          rm -rf feeds.buildinfo
@@ -113,8 +114,8 @@ jobs:
          rm -rf *.manifest
          rm -rf sha256sums
          rm -rf version.buildinfo
-         mv immortalwrt-mediatek-mt7981-mt7981-360-t7-108M-squashfs-sysupgrade.bin 360T7-hanwckf-108M-mini-sysupgrade.bin
-         mv immortalwrt-mediatek-mt7981-mt7981-360-t7-108M-squashfs-factory.bin 360T7-hanwckf-108M-mini-factory.bin
+         mv immortalwrt-mediatek-mt7981-mt7981-360-t7-108M-squashfs-sysupgrade.bin 360T7-hanwckf-108M-mini-sysupgrade-$time.bin
+         mv immortalwrt-mediatek-mt7981-mt7981-360-t7-108M-squashfs-factory.bin 360T7-hanwckf-108M-mini-factory-$time.bin
          echo "FIRMWARE=$PWD" >> $GITHUB_ENV
          echo "status=success" >> $GITHUB_OUTPUT
 
