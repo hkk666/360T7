@@ -168,7 +168,7 @@ jobs:
          username: ${{ secrets.MAILUSERNAME }}
          password: ${{ secrets.MAILPASSWORD }}
          subject: 🎉编译成功🎉
-         body: 360 T7-hanwckf-mini-OpenWrt
+         body: https://github.com/hkk666/360T7/releases
          to: ${{ secrets.MAIL }}
          from: GitHub Actions
          
