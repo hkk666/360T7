@@ -18,21 +18,21 @@ jobs:
     - name: Get Commit Hash
       id: getHash
       run: |
-        git clone --depth 1 $REPO_URL -b $REPO_BRANCH .
-        git log --name-only >> text.txt
-        echo "commitHash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+         git clone --depth 1 $REPO_URL -b $REPO_BRANCH .
+         git log --name-only >> text.txt
+         echo "commitHash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
 
     - name: Compare Commit Hash
       id: cacheHash
       uses: actions/cache@v3
       with:
-        path: .commitHash
-        key: HEAD-${{ steps.getHash.outputs.commitHash }}
+         path: .commitHash
+         key: HEAD-${{ steps.getHash.outputs.commitHash }}
 
     - name: Save New Commit Hash
       if: steps.cacheHash.outputs.cache-hit != 'true'
       run: |
-        echo ${{ steps.getHash.outputs.commitHash }} | tee .commitHash
+         echo ${{ steps.getHash.outputs.commitHash }} | tee .commitHash
         
     - name: Email notification
       uses: dawidd6/action-send-mail@master
@@ -52,11 +52,11 @@ jobs:
       if: steps.cacheHash.outputs.cache-hit != 'true'
       uses: peter-evans/repository-dispatch@v1
       with:
-       token: ${{ secrets.ACTIONS_TRIGGER_PAT }}
-       event-type: Source Code Update
+         token: ${{ secrets.ACTIONS_TRIGGER_PAT }}
+         event-type: Source Code Update
 
     - name: Delete workflow runs
       uses: FunctionXJB/delete-workflow-runs@main
       with:
-        retain_days: 1
-        keep_minimum_runs: 1
+         retain_days: 1
+         keep_minimum_runs: 1
