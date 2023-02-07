@@ -45,7 +45,7 @@ jobs:
       run: |
         echo ${{ steps.getHash.outputs.commitHash }} | tee .commitHash
         
-    - name: '邮件通知'
+    - name: Email notification
       uses: dawidd6/action-send-mail@master
       if: steps.cacheHash.outputs.cache-hit != 'true' && !cancelled()
       with:
@@ -53,18 +53,18 @@ jobs:
          server_port: 465
          username: ${{ secrets.MAILUSERNAME }}
          password: ${{ secrets.MAILPASSWORD }}
-         subject: hanwckf 更新了源码
+         subject: hanwckf update source code
          body: file://text.txt
-         to: 1689726513@qq.com
-         from: GitHub Actions
+         to: ${{ secrets.MAIL }}
+         from: GitHub Actions For Checking Update
          content_type: text/html
          
-#    - name: Trigger build
-#      if: steps.cacheHash.outputs.cache-hit != 'true'
-#      uses: peter-evans/repository-dispatch@v1
-#      with:
-#       token: ${{ secrets.ACTIONS_TRIGGER_PAT }}
-#        event-type: Source Code Update
+    - name: Trigger build
+      if: steps.cacheHash.outputs.cache-hit != 'true'
+      uses: peter-evans/repository-dispatch@v1
+      with:
+       token: ${{ secrets.ACTIONS_TRIGGER_PAT }}
+        event-type: Source Code Update
 
     - name: Delete workflow runs
       uses: FunctionXJB/delete-workflow-runs@main
