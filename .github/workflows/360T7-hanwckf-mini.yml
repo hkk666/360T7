@@ -53,7 +53,7 @@ jobs:
          ccache: 'true'
          mixkey: '360T7'
          toolchain: 'true'
-         skip: 'false'
+         skip: 'true'
          clean: ${{github.event.inputs.clean}}
          prefix: ${{ github.workspace }}/openwrt
            
