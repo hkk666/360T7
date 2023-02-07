@@ -106,7 +106,7 @@ jobs:
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
-         time=$(date +%Y.%m.%d-%H:%M)
+         time=$(date +%Y.%m.%d)
          cd openwrt/bin/targets/*/*
          tar -cvf package.tar packages
          rm -rf feeds.buildinfo
