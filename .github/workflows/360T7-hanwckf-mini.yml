@@ -121,7 +121,7 @@ jobs:
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
          name: 360T7-hanwckf-mini-OpenWrt
-         path: ${{ env.FIRMWARE }}
+         path: openwrt/bin
 
     - name: Generate release tag
       id: tag
