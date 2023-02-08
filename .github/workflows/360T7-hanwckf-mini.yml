@@ -100,6 +100,13 @@ jobs:
       if: (!cancelled())
       run: df -hT
 
+    - name: Upload firmware directory
+      uses: actions/upload-artifact@main
+      if: steps.organize.outputs.status == 'success' && !cancelled()
+      with:
+         name: 360T7-hanwckf-mini-OpenWrt
+         path: openwrt/bin
+
     - name: Organize files
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
@@ -116,13 +123,6 @@ jobs:
          mv *factory.bin 360T7-hanwckf-108M-mini-factory-$time.bin
          echo "FIRMWARE=$PWD" >> $GITHUB_ENV
          echo "status=success" >> $GITHUB_OUTPUT
-
-    - name: Upload firmware directory
-      uses: actions/upload-artifact@main
-      if: steps.organize.outputs.status == 'success' && !cancelled()
-      with:
-         name: 360T7-hanwckf-mini-OpenWrt
-         path: openwrt/bin
 
     - name: Generate release tag
       id: tag
