@@ -74,7 +74,6 @@ jobs:
       run: |
          [ -e files ] && mv files openwrt/files
          [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-         cat ./doc/config/ua2f.config >> openwrt/.config
          chmod +x $DIY_P2_SH
          cd openwrt
          $GITHUB_WORKSPACE/$DIY_P2_SH
@@ -134,7 +133,7 @@ jobs:
          release_name="360T7-hanwckf-OpenWrt-mini-$Dtime"
          echo "Gateway：192.168.50.1
          Password：password
-         Application：mwan3，ramfree，ua2f" >> release.txt
+         Application：mwan3，ramfree" >> release.txt
          echo "release_name=$release_name" >> $GITHUB_OUTPUT
          echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
          echo "status=success" >> $GITHUB_OUTPUT
