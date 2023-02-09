@@ -126,10 +126,9 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-         time=$(date +%Y.%m.%d)
          Dtime=$(date +%Y.%m.%d-%H:%M)
-         release_tag="K2P-OpenWrt-$time"
-         release_name="K2P-OpenWr-$Dtime"
+         release_tag="K2P-OpenWrt-$Dtime"
+         release_name="K2P-OpenWrt"
          echo "Gateway：192.168.50.1
          Password：password
          Application：nlbwmon，ramfree，ssr-plus" >> release.txt
