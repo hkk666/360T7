@@ -119,8 +119,6 @@ jobs:
          rm -rf *.manifest
          rm -rf sha256sums
          rm -rf version.buildinfo
-         mv *sysupgrade.bin K2P-OpenWrt-sysupgrade-$time.bin
-         mv *factory.bin K2P-OpenWrt-factory-$time.bin
          echo "FIRMWARE=$PWD" >> $GITHUB_ENV
          echo "status=success" >> $GITHUB_OUTPUT
 
