@@ -152,7 +152,7 @@ jobs:
 
     - name: Email notification
       uses: dawidd6/action-send-mail@v3
-      if: steps.compile.outputs.status == 'success' && !cancelled()
+      if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
          server_address: smtp.163.com
          server_port: 465
