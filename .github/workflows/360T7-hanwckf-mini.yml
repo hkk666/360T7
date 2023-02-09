@@ -102,7 +102,7 @@ jobs:
 
     - name: Upload firmware directory
       uses: actions/upload-artifact@main
-      if: steps.organize.outputs.status == 'success' && !cancelled()
+      if: steps.compile.outputs.status == 'success' && !cancelled()
       with:
          name: 360T7-hanwckf-mini-OpenWrt
          path: openwrt/bin
