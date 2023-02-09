@@ -132,7 +132,7 @@ jobs:
          release_name="K2P-OpenWr-$Dtime"
          echo "Gateway：192.168.50.1
          Password：password
-         Application：mwan3，ramfree，ua2f" >> release.txt
+         Application：nlbwmon，ramfree，ssr-plus" >> release.txt
          echo "release_name=$release_name" >> $GITHUB_OUTPUT
          echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
          echo "status=success" >> $GITHUB_OUTPUT
@@ -150,7 +150,7 @@ jobs:
 
     - name: Email notification
       uses: dawidd6/action-send-mail@v3
-      if: steps.compile.outputs.status == 'success' && !cancelled()
+      if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
          server_address: smtp.163.com
          server_port: 465
