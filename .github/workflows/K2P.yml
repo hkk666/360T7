@@ -156,7 +156,7 @@ jobs:
          server_port: 465
          username: ${{ secrets.MAILUSERNAME }}
          password: ${{ secrets.MAILPASSWORD }}
-         subject: 🎉Compilation succeeded🎉
+         subject: 🎉GitHub Actions succeeded🎉
          body: https://github.com/hkk666/360T7/releases
          to: ${{ secrets.MAIL }}
          from: GitHub Actions For K2P OpenWrt
