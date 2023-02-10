@@ -20,10 +20,12 @@ GitHub Actions For OpenWrt
 
 ![openwrt](doc/img/openwrt.png)
 
-鸣谢:
+特别鸣谢:
 - [hanwckf](https://github.com/hanwckf/immortalwrt-mt798x)
 - [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)
-
+- [stupidloud](https://github.com/stupidloud/cachewrtbuild)
+- [Zxilly](https://github.com/Zxilly/UA2F)
+- [dawidd6](https://github.com/dawidd6/action-send-mail)
 <!--
 **该项目可云编译 360T7 OpenWrt**
 
