@@ -30,7 +30,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
     
-    - name: Initialization environment
+    - name: Prepare environment
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
@@ -39,6 +39,7 @@ jobs:
          sudo timedatectl set-timezone "$TZ"
          sudo mkdir -p /workdir
          sudo chown $USER:$GROUPS /workdir
+         echo "time=$(date +%Y.%m.%d)" >> $GITHUB_ENV
     
     - name: Clone source code
       working-directory: /workdir
@@ -111,7 +112,6 @@ jobs:
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
-         time=$(date +%Y.%m.%d)
          cd openwrt/bin/targets/*/*
          tar -cvf package.tar packages
          rm -rf feeds.buildinfo
@@ -128,7 +128,6 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-         time=$(date +%Y.%m.%d)
          release_tag="360T7-hanwckf-OpenWrt-mini-$time"
          release_name="360T7-hanwckf-OpenWrt-mini"
          echo "Gateway：192.168.50.1
