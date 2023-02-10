@@ -20,6 +20,12 @@ GitHub Actions For OpenWrt
 
 ![openwrt](doc/img/openwrt.png)
 
+感谢大佬们的源码和付出
+
+- [lean](https://github.com/coolsnowwolf/lede)
+- [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)
+- [hanwckf](https://github.com/hanwckf/immortalwrt-mt798x)
+
 <!--
 **该项目可云编译 360T7 OpenWrt**
 
@@ -35,17 +41,6 @@ GitHub Actions For OpenWrt
 |hanwckf|![Compile Status](https://img.shields.io/github/actions/workflow/status/hkk666/360T7/sub_directory/360T7-hanwckf-mini.yml?branch=main)|360T7-hanwck-mini|
 |padavanonly|![Compile Status](https://img.shields.io/github/actions/workflow/status/hkk666/360T7/sub_directory/360T7-padavanonly.yml?branch=main)|360T7-padavanonly|
 |padavanonly|![Compile Status](https://img.shields.io/github/actions/workflow/status/hkk666/360T7/sub_directory/360T7-padavanonly-mini.yml?branch=main)|360T7-padavanonly-mini|
-
-**感谢大佬们的源码和付出（主要）**
-
-- [天灵](https://github.com/1715173329)
-- [lean](https://github.com/coolsnowwolf/lede)
-- [lorz](https://github.com/1orz/My-action)
-- [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)
-- [kenzok8](https://github.com/kenzok8/openwrt-packages)
-- [sdf8057](https://github.com/sdf8057)
-- [hanwckf](https://github.com/hanwckf/immortalwrt-mt798x)
-- [padavanonly](https://github.com/padavanonly/immortalwrtARM) 
 
 |          [lean](https://github.com/coolsnowwolf/lede)         |        [天灵](https://github.com/1715173329)               |              [lorz](https://github.com/1orz/My-action)               |              [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)               |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
