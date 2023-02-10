@@ -20,11 +20,9 @@ GitHub Actions For OpenWrt
 
 ![openwrt](doc/img/openwrt.png)
 
-感谢大佬们的源码和付出
-
-- [lean](https://github.com/coolsnowwolf/lede)
-- [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)
+鸣谢:
 - [hanwckf](https://github.com/hanwckf/immortalwrt-mt798x)
+- [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)
 
 <!--
 **该项目可云编译 360T7 OpenWrt**
