@@ -20,7 +20,8 @@ GitHub Actions For 360T7 OpenWrt
 
 ![openwrt](doc/img/openwrt.png)
 
-**特别鸣谢:**
+## 特别鸣谢:
+
 - [Zxilly](https://github.com/Zxilly/UA2F)
 - [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)
 - [hanwckf](https://github.com/hanwckf/immortalwrt-mt798x)
