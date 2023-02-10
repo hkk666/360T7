@@ -26,7 +26,7 @@ GitHub Actions For 360T7 OpenWrt
 - [hanwckf](https://github.com/hanwckf/immortalwrt-mt798x)
 - [dawidd6](https://github.com/dawidd6/action-send-mail)
 - [stupidloud](https://github.com/stupidloud/cachewrtbuild)
-- [stupidloud](https://github.com/stupidloud/cachewrtbuild)
+
 <!--
 **该项目可云编译 360T7 OpenWrt**
 
