@@ -46,7 +46,7 @@ GitHub Actions For 360T7 OpenWrt
 ### 1、Fork本仓库 📌
 右上角 `Fork`  `star`可以给予鼓励。
 
-### 2、创建密钥 ✍🏻
+### 2、创建密钥 🔐
 🚨 特别注意：密钥只显示一次，创建成功后请务必保存好，否则需要重新创建。如果你不需要创建 `ACTIONS_TRIGGER_PAT` 密钥，则需要删除 `update-checker.yml` 下图部分。
 
 ![](doc/img/example6.png)
@@ -57,7 +57,9 @@ GitHub Actions For 360T7 OpenWrt
 
 ![](doc/img/example1.png)
 
-### 3、前往Fork之后的仓库页面，按下图实例图示点击，填入上述密钥即可，`GITHUB_TOKEN`不需要填入。 🤷‍♂️
+### 3、填写密钥 ✍🏻
+
+前往Fork之后的仓库页面，按下图实例图示点击，填入上述密钥即可，`GITHUB_TOKEN`不需要填入。 
 
 ![](doc/img/example2.png)
 
