@@ -60,7 +60,7 @@ GitHub Actions For 360T7 OpenWrt
 
 ![](doc/img/example2.png)
 
-如果你不需要邮箱通知，可以忽略该项，同时需要在 `360T7-hanwckf-mini.yml`和`ACTIONS_TRIGGER_PAT` 删除邮箱通知部分。
+如果你不需要邮箱通知，可以忽略该项，同时需要在 `360T7-hanwckf-mini.yml` `update-checker.yml` 删除邮箱通知部分。
 
 ![](doc/img/example3.png)
 
