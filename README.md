@@ -75,10 +75,10 @@ GitHub Actions For 360T7 OpenWrt
 ### 5、其它密钥说明(非必需)：
 以下密钥在步骤3中填入即可，不是在步骤2创建，获取方法 [163邮箱开通SMTP](https://jingyan.baidu.com/article/c275f6ba33a95de33d7567d9.html)
 
-| secrets.MAILUSERNAME | 163邮箱账号 |  
+| MAILUSERNAME | 163邮箱账号 |  
 | :------------------: | :------------------: |
-| secrets.MAILPASSWORD | SMTP密钥 |
-| secrets.MAIL | 接收邮箱 |
+| MAILPASSWORD | SMTP密钥 |
+| MAIL | 接收邮箱 |
 
 ## 特别鸣谢
 
