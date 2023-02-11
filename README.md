@@ -46,7 +46,7 @@ GitHub Actions For 360T7 OpenWrt
 ### 1、Fork本仓库
 
 ### 2、创建密钥
-特别注意：密钥只显示一次，创建成功后务必保存到记事本，否则需要重新创建。如果你不需要创建 `ACTIONS_TRIGGER_PAT` 密钥，则需要删除 `update-checker.yml` 下图部分.
+特别注意：密钥只显示一次，创建成功后务必保存好，否则需要重新创建。如果你不需要创建 `ACTIONS_TRIGGER_PAT` 密钥，则需要删除 `update-checker.yml` 下图部分。
 
 ![](doc/img/example6.png)
 
