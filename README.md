@@ -43,10 +43,9 @@ GitHub Actions For 360T7 OpenWrt
 
 ## 食用教程
 
-### 1.Fork本仓库
+### 1、Fork本仓库
 
-### 2.创建密钥
-
+### 2、创建密钥
 前往 [Settings/Developer settings](https://github.com/settings/tokens/new) 创建 `GIT_USER_TOKEN` `GITHUB_TOKEN` 密钥,如果你需要定时检查源码并自动触发编译，还需要创建 `ACTIONS_TRIGGER_PAT` 密钥.密钥创建页面,填入名称,Expiration选择 `no expiration` ,Select scopes选择`workflows` `admin:repo_hook` ,点击 `Generate token` 即可创建成功.
 
 特别注意：密钥只显示一次，创建成功后务必保存到记事本，否则需要重新创建.如果你不需要创建 `ACTIONS_TRIGGER_PAT` 密钥,需要删除 `update-checker.yml` 下图部分.
@@ -57,7 +56,7 @@ GitHub Actions For 360T7 OpenWrt
 
 ![](doc/img/example1.png)
 
-### 3.前往Fork之后的仓库页面，按下图实例图示点击，填入上述密钥即可.
+### 3、前往Fork之后的仓库页面，按下图实例图示点击，填入上述密钥即可.
 
 ![](doc/img/example2.png)
 
@@ -65,7 +64,7 @@ GitHub Actions For 360T7 OpenWrt
 
 ![](doc/img/example3.png)
 
-### 4.开始编译
+### 4、开始编译
 
 前往Fork之后的仓库页面，按下图实例图示点击，等待编译结果即可.
 
@@ -73,7 +72,8 @@ GitHub Actions For 360T7 OpenWrt
 
 ![](doc/img/example5.png)
 
-### 5.其它密钥说明(非必需)：
+### 5、其它密钥说明(非必需)：
+以下密钥在步骤3中填入即可，不是在步骤2创建，获取方法 [163邮箱开通SMTP](https://jingyan.baidu.com/article/c275f6ba33a95de33d7567d9.html)
 
 | secrets.MAILUSERNAME | 163邮箱账号 |  
 | :------------------: | :------------------: |
