@@ -64,7 +64,7 @@ GitHub Actions For 360T7 OpenWrt
 | secrets.MAILPASSWORD | SMTP密钥 |
 | secrets.MAIL | 接收邮箱 |
 
-## 如果你不需要邮箱通知，可以忽略该项，同时需要去 `360T7-hanwckf-mini.yml ` 删除邮箱通知部分.
+### 如果你不需要邮箱通知，可以忽略该项，同时需要去 `360T7-hanwckf-mini.yml ` 删除邮箱通知部分.
 
 ![](doc/img/example3.png)
 
