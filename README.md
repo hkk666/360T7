@@ -46,27 +46,27 @@ GitHub Actions For 360T7 OpenWrt
 ### 1、Fork本仓库
 
 ### 2、创建密钥
-特别注意：密钥只显示一次，创建成功后务必保存到记事本，否则需要重新创建.如果你不需要创建 `ACTIONS_TRIGGER_PAT` 密钥,需要删除 `update-checker.yml` 下图部分.
+特别注意：密钥只显示一次，创建成功后务必保存到记事本，否则需要重新创建。如果你不需要创建 `ACTIONS_TRIGGER_PAT` 密钥，则需要删除 `update-checker.yml` 下图部分.
 
 ![](doc/img/example6.png)
 
-前往 [Settings/Developer settings](https://github.com/settings/tokens/new) 创建 `GIT_USER_TOKEN` `GITHUB_TOKEN` 密钥,如果你需要定时检查源码并自动触发编译，还需要创建 `ACTIONS_TRIGGER_PAT` 密钥.密钥创建页面,填入名称,Expiration选择 `no expiration` ,Select scopes选择`workflows` `admin:repo_hook` ,点击 `Generate token` 即可创建成功.
+前往 [Settings/Developer settings](https://github.com/settings/tokens/new) 创建 `GIT_USER_TOKEN` `GITHUB_TOKEN` 密钥，如果你需要定时检查源码并自动触发编译，还需要创建 `ACTIONS_TRIGGER_PAT` 密钥.密钥创建页面，填入名称，Expiration选择 `no expiration` ,Select scopes选择`workflows` `admin:repo_hook` ,点击 `Generate token` 即可创建成功。
 
 实例图示：
 
 ![](doc/img/example1.png)
 
-### 3、前往Fork之后的仓库页面，按下图实例图示点击，填入上述密钥即可.
+### 3、前往Fork之后的仓库页面，按下图实例图示点击，填入上述密钥即可。
 
 ![](doc/img/example2.png)
 
-如果你不需要邮箱通知，可以忽略该项，同时需要在 `360T7-hanwckf-mini.yml`和`ACTIONS_TRIGGER_PAT` 删除邮箱通知部分.
+如果你不需要邮箱通知，可以忽略该项，同时需要在 `360T7-hanwckf-mini.yml`和`ACTIONS_TRIGGER_PAT` 删除邮箱通知部分。
 
 ![](doc/img/example3.png)
 
 ### 4、开始编译
 
-前往Fork之后的仓库页面，按下图实例图示点击，等待编译结果即可.
+前往Fork之后的仓库页面，按下图实例图示点击，等待编译结果即可。
 
 ![](doc/img/example4.png)
 
