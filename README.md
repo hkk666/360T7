@@ -42,7 +42,7 @@ GitHub Actions For 360T7 OpenWrt
 └── README.md
 ```
 
-##食用教程
+## 食用教程
 
 ### 1.Fork本仓库
 
