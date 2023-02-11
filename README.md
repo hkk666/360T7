@@ -47,7 +47,7 @@ GitHub Actions For 360T7 OpenWrt
 右上角 `Fork`  `star`可以给予鼓励。
 
 ### 2、创建密钥 ✍🏻
-特别注意：密钥只显示一次，创建成功后请务必保存好，否则需要重新创建。如果你不需要创建 `ACTIONS_TRIGGER_PAT` 密钥，则需要删除 `update-checker.yml` 下图部分。
+🚨 特别注意：密钥只显示一次，创建成功后请务必保存好，否则需要重新创建。如果你不需要创建 `ACTIONS_TRIGGER_PAT` 密钥，则需要删除 `update-checker.yml` 下图部分。
 
 ![](doc/img/example6.png)
 
