@@ -61,8 +61,6 @@ GitHub Actions For 360T7 OpenWrt
 
 ![](doc/img/example2.png)
 
-![](doc/img/example3.png)
-
 ### 4、开始编译 🚀
 
 前往Fork之后的仓库页面，按下图实例图示点击，等待编译结果即可。
@@ -80,6 +78,8 @@ GitHub Actions For 360T7 OpenWrt
 | :------------------: | :------------------: |
 | MAILPASSWORD | SMTP密钥 |
 | MAIL | 接收邮箱 |
+
+![](doc/img/example3.png)
 
 ## 特别鸣谢 🥰
 
