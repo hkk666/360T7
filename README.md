@@ -20,7 +20,7 @@ GitHub Actions For 360T7 OpenWrt
 
 ![openwrt](doc/img/openwrt.png)
 
-## 友情提醒:
+## 友情提醒
 此仓库只是拉取源码进行编译，本人并不会修复相关问题！
 如果你遇到问题，可以提issues，我会尽力帮助你.
 
@@ -42,7 +42,7 @@ GitHub Actions For 360T7 OpenWrt
 └── README.md
 ```
 
-## 特别鸣谢:
+## 特别鸣谢
 <div align="center"> 
 
 |          [lean](https://github.com/coolsnowwolf/lede)         |        [天灵](https://github.com/1715173329)               |              [lorz](https://github.com/1orz/My-action)               |              [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)               |          [Zxilly](https://github.com/Zxilly/UA2F)         |           [dawidd6](https://github.com/dawidd6/action-send-mail)          |              [stupidloud](https://github.com/stupidloud/cachewrtbuild)               |              [hanwckf](https://github.com/hanwckf/immortalwrt-mt798x)               |
