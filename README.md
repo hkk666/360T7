@@ -20,6 +20,10 @@ GitHub Actions For 360T7 OpenWrt
 
 ![openwrt](doc/img/openwrt.png)
 
+## 友情提醒:
+此仓库只是拉取源码进行编译，本人并不会修复相关问题！
+如果你遇到问题，可以提issues.
+
 ## 特别鸣谢:
 <div align="center"> 
 
@@ -28,30 +32,3 @@ GitHub Actions For 360T7 OpenWrt
 | <img width="60" src="https://avatars.githubusercontent.com/u/31687149?v=4"/> | <img width="60" src="https://avatars.githubusercontent.com/u/22235437?v=4" /> | <img width="60" src="https://avatars.githubusercontent.com/u/31647663?v=4" /> | <img width="60" src="https://avatars.githubusercontent.com/u/25927179?v=4" /> | <img width="60" src="https://avatars.githubusercontent.com/u/31370133?v=4"/> | <img width="60" src="https://avatars.githubusercontent.com/u/9713907?v=4" /> | <img width="60" src="https://avatars.githubusercontent.com/u/56048681?v=4" /> | <img width="60" src="https://avatars.githubusercontent.com/u/27666983?v=4" /> |
 
 </div>
-<!--
-**该项目可云编译 360T7 OpenWrt**
-- [Zxilly](https://github.com/Zxilly/UA2F)
-- [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)
-- [hanwckf](https://github.com/hanwckf/immortalwrt-mt798x)
-- [dawidd6](https://github.com/dawidd6/action-send-mail)
-- [stupidloud](https://github.com/stupidloud/cachewrtbuild)
-## 编译状态
-
-<small>*绿色标志![](https://img.shields.io/badge/-passing-brightgreen)表示编译通过</small>
-
-<small>*红色标志![](https://img.shields.io/badge/-falling-red) 可能是编译失败，请进入 [Actions](https://github.com/hkk666/360T7/actions) 进一步查看详情</small>
-
-|源码来源|编译状态|备注|
-|:-:|:-:|:-:|
-|hanwckf|![Compile Status](https://img.shields.io/github/actions/workflow/status/hkk666/360T7/sub_directory/360T7-hanwckf.yml?branch=main)|360T7-hanwck|
-|hanwckf|![Compile Status](https://img.shields.io/github/actions/workflow/status/hkk666/360T7/sub_directory/360T7-hanwckf-mini.yml?branch=main)|360T7-hanwck-mini|
-|padavanonly|![Compile Status](https://img.shields.io/github/actions/workflow/status/hkk666/360T7/sub_directory/360T7-padavanonly.yml?branch=main)|360T7-padavanonly|
-|padavanonly|![Compile Status](https://img.shields.io/github/actions/workflow/status/hkk666/360T7/sub_directory/360T7-padavanonly-mini.yml?branch=main)|360T7-padavanonly-mini|
-
-|          [lean](https://github.com/coolsnowwolf/lede)         |        [天灵](https://github.com/1715173329)               |              [lorz](https://github.com/1orz/My-action)               |              [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)               |
-| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img width="60" src="https://avatars.githubusercontent.com/u/31687149?v=4"/> | <img width="60" src="https://avatars.githubusercontent.com/u/22235437?v=4" /> | <img width="60" src="https://avatars.githubusercontent.com/u/31647663?v=4" /> | <img width="60" src="https://avatars.githubusercontent.com/u/25927179?v=4" /> |
-|          [kenzok8](https://github.com/kenzok8/openwrt-packages)         |           [sdf8057](https://github.com/sdf8057)          |              [hanwckf](https://github.com/hanwckf/immortalwrt-mt798x)               |              [padavanonly](https://github.com/padavanonly/immortalwrtARM)               |
-| <img width="60" src="https://avatars.githubusercontent.com/u/39034242?v=4"/> | <img width="60" src="https://avatars.githubusercontent.com/u/54014465?v=4" /> | <img width="60" src="https://avatars.githubusercontent.com/u/27666983?v=4" /> | <img width="60" src="https://avatars.githubusercontent.com/u/83120842?v=4" /> |
-
--->
