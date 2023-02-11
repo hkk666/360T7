@@ -24,6 +24,24 @@ GitHub Actions For 360T7 OpenWrt
 此仓库只是拉取源码进行编译，本人并不会修复相关问题！
 如果你遇到问题，可以提issues，我会尽力帮助你.
 
+## 目录介绍
+
+```tree
+360T7
+├── .github/workflows
+│   ├── 360T7-hanwckf-mini.yml        云编译 360T7
+│   ├── update-checker.yml            定时检查源码更新
+├── doc
+│   ├── backup                        旧文件备份
+│   ├── config
+│   │   ├──360T7-hanwckf-mini.config  固件定制
+│   │   ├──ua2f.config                ua2f依赖
+│   ├── diy                           自定义脚本文件
+│   ├── img                           图片存放
+├── LICENSE
+└── README.md
+```
+
 ## 特别鸣谢:
 <div align="center"> 
 
