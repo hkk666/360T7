@@ -46,11 +46,11 @@ GitHub Actions For 360T7 OpenWrt
 ### 1、Fork本仓库
 
 ### 2、创建密钥
-前往 [Settings/Developer settings](https://github.com/settings/tokens/new) 创建 `GIT_USER_TOKEN` `GITHUB_TOKEN` 密钥,如果你需要定时检查源码并自动触发编译，还需要创建 `ACTIONS_TRIGGER_PAT` 密钥.密钥创建页面,填入名称,Expiration选择 `no expiration` ,Select scopes选择`workflows` `admin:repo_hook` ,点击 `Generate token` 即可创建成功.
-
 特别注意：密钥只显示一次，创建成功后务必保存到记事本，否则需要重新创建.如果你不需要创建 `ACTIONS_TRIGGER_PAT` 密钥,需要删除 `update-checker.yml` 下图部分.
 
 ![](doc/img/example6.png)
+
+前往 [Settings/Developer settings](https://github.com/settings/tokens/new) 创建 `GIT_USER_TOKEN` `GITHUB_TOKEN` 密钥,如果你需要定时检查源码并自动触发编译，还需要创建 `ACTIONS_TRIGGER_PAT` 密钥.密钥创建页面,填入名称,Expiration选择 `no expiration` ,Select scopes选择`workflows` `admin:repo_hook` ,点击 `Generate token` 即可创建成功.
 
 实例图示：
 
