@@ -56,7 +56,7 @@ GitHub Actions For 360T7 OpenWrt
 
 ![](doc/img/example1.png)
 
-### 3、前往Fork之后的仓库页面，按下图实例图示点击，填入上述密钥即可。
+### 3、前往Fork之后的仓库页面，按下图实例图示点击，填入上述密钥即可，`GITHUB_TOKEN`不需要填入。
 
 ![](doc/img/example2.png)
 
