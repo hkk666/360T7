@@ -63,7 +63,6 @@ jobs:
     - name: Load custom feeds
       run: |
          [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-         cat ./doc/config/ua2f.config >> openwrt/.config
          chmod +x $DIY_P1_SH
          cd openwrt
          $GITHUB_WORKSPACE/$DIY_P1_SH
@@ -134,7 +133,7 @@ jobs:
          release_name="360T7-padavanonly-OpenWrt-mini"
          echo "Gateway：192.168.50.1
          Password：password
-         Application：mwan3，ramfree，ua2f" >> release.txt
+         Application：mwan3，ramfree" >> release.txt
          echo "release_name=$release_name" >> $GITHUB_OUTPUT
          echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
          echo "status=success" >> $GITHUB_OUTPUT
