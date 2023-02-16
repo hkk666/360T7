@@ -54,7 +54,7 @@ jobs:
       uses: klever1988/cachewrtbuild@main
       with:
          ccache: 'true'
-         mixkey: '360T7'
+         mixkey: '360T7-hanwckf'
          toolchain: 'true'
          skip: 'true'
          clean: ${{github.event.inputs.clean}}
