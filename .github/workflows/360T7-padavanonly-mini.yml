@@ -95,7 +95,7 @@ jobs:
       run: |
          cd openwrt
          echo -e "$(nproc) thread compile"
-         make -j$(nproc)
+         make -j$(nproc) || make -j1 V=s
          echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Check space usage
@@ -111,7 +111,7 @@ jobs:
 
     - name: Organize files
       id: organize
-      if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
+      if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
          cd openwrt/bin/targets/*/*
          tar -cvf package.tar packages
@@ -127,7 +127,7 @@ jobs:
 
     - name: Generate release tag
       id: tag
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
          release_tag="360T7-padavanonly-OpenWrt-mini-$time"
          release_name="360T7-padavanonly-OpenWrt-mini"
