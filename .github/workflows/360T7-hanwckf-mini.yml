@@ -112,13 +112,15 @@ jobs:
       id: organize
       if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
+         cd openwrt/bin
+         tar -cvf package.tar packages || mv package.tar openwrt/bin/targets/*/*
          cd openwrt/bin/targets/*/*
-         tar -cvf package.tar packages
          rm -rf feeds.buildinfo
          rm -rf *kernel*
          rm -rf *.manifest
          rm -rf sha256sums
          rm -rf version.buildinfo
+         rm -rf package
          mv *sysupgrade.bin 360T7-hanwckf-108M-mini-sysupgrade-$time.bin
          mv *factory.bin 360T7-hanwckf-108M-mini-factory-$time.bin
          echo "FIRMWARE=$PWD" >> $GITHUB_ENV
