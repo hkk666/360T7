@@ -5,10 +5,6 @@ on:
  #schedule:
  #- cron: '0 20 * * 1'
 env:
-  UPLOAD_BIN_DIR: false
-  UPLOAD_FIRMWARE: true
-  UPLOAD_RELEASE: true
-
   TZ: Asia/Shanghai
   
 jobs:
@@ -16,10 +12,19 @@ jobs:
     runs-on: ubuntu-22.04
     
     steps:
-    - name: 删除旧项目
-      uses: dev-drprasad/delete-older-releases@v0.2.0
+    - name: Generate release tag
+      id: tag
+      run: |
+         echo "https://github.com/hkk666/360T7/releases/tag/360T7-padavanonly-OpenWrt-mini-$time" >> body.txt
+    
+    - name: Email notification
+      uses: dawidd6/action-send-mail@v3
       with:
-        keep_latest: 3
-        delete_tags: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         server_address: smtp.163.com
+         server_port: 465
+         username: ${{ secrets.MAILUSERNAME }}
+         password: ${{ secrets.MAILPASSWORD }}
+         subject: 🎉GitHub Actions succeeded🎉
+         body: body.txt
+         to: ${{ secrets.MAIL }}
+         from: GitHub Actions For 360T7 OpenWrt
