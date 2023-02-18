@@ -39,7 +39,6 @@ jobs:
          sudo timedatectl set-timezone "$TZ"
          sudo mkdir -p /workdir
          sudo chown $USER:$GROUPS /workdir
-         echo "time=$(date +%Y.%m.%d)" >> $GITHUB_ENV
     
     - name: Clone source code
       working-directory: /workdir
@@ -85,7 +84,7 @@ jobs:
       run: |
          cd openwrt
          make defconfig
-         make download -j16
+         make download -j8
          find dl -size -1024c -exec ls -l {} \;
          find dl -size -1024c -exec rm -f {} \;
 
@@ -129,13 +128,12 @@ jobs:
       id: tag
       if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
-         release_tag="360T7-hanwckf-OpenWrt-mini-$time"
-         release_name="360T7-hanwckf-OpenWrt-mini"
          echo "Gateway：192.168.50.1
          Password：password
          Application：mwan3，ramfree，ua2f" >> release.txt
-         echo "release_name=$release_name" >> $GITHUB_OUTPUT
-         echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
+         echo "release_tag=360T7-hanwckf-OpenWrt-mini-$(date +%Y.%m.%d)" >> $GITHUB_ENV
+         echo "release_name=360T7-hanwckf-OpenWrt-mini" >> $GITHUB_ENV
+         echo "body= https://github.com/hkk666/360T7/releases/tag/360T7-hanwckf-OpenWrt-mini-$(date +%Y.%m.%d)" >> $GITHUB_ENV
          echo "status=success" >> $GITHUB_OUTPUT
         
     - name: Upload firmware to release
@@ -144,8 +142,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GIT_USER_TOKEN }}
       with:
-         name: ${{ steps.tag.outputs.release_name }} 
-         tag_name: ${{ steps.tag.outputs.release_tag }}
+         name: ${{ env.release_name }} 
+         tag_name: ${{ env.release_tag }}
          body_path: release.txt
          files: ${{ env.FIRMWARE }}/*
 
@@ -158,7 +156,7 @@ jobs:
          username: ${{ secrets.MAILUSERNAME }}
          password: ${{ secrets.MAILPASSWORD }}
          subject: 🎉GitHub Actions succeeded🎉
-         body: https://github.com/hkk666/360T7/releases
+         body: ${{ env.body }}
          to: ${{ secrets.MAIL }}
          from: GitHub Actions For 360T7 OpenWrt
          
