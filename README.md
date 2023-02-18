@@ -28,15 +28,17 @@ GitHub Actions For 360T7 OpenWrt
 ```tree
 360T7
 ├── .github/workflows
-│   ├── 360T7-hanwckf-mini.yml         云编译 360T7
-│   ├── update-checker.yml             定时检查源码更新
+│   ├── 360T7-hanwckf-mini.yml             拉取 `hanwckf` 源码进行编译
+│   ├── 360T7-padavanonly-mini.yml         拉取 `padavanonly` 源码进行编译
+│   ├── update-checker.yml                 定时检查源码的更新情况
 ├── doc
-│   ├── backup                         旧文件备份
+│   ├── backup                             旧文件备份
 │   ├── config
-│   │   ├── 360T7-hanwckf-mini.config  固件定制
-│   │   ├── ua2f.config                ua2f依赖
-│   ├── diy                            自定义脚本文件
-│   ├── img                            图片存放
+│   │   ├── 360T7-hanwckf-mini.config      固件定制
+│   │   ├── 360T7-padavanonly-mini.config  固件定制
+│   │   ├── ua2f.config                    `ua2f`依赖
+│   ├── diy                                自定义脚本文件
+│   ├── img                                图片存放处
 ├── LICENSE
 └── README.md
 ```
