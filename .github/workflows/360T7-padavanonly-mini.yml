@@ -118,10 +118,11 @@ jobs:
          cd openwrt/bin/targets/mediatek/mt7981
          rm -rf packages
          rm -rf feeds.buildinfo
-         rm -rf *kernel.bin
-         rm -rf *manifest
          rm -rf sha256sums
          rm -rf version.buildinfo
+         rm -rf *kernel.bin
+         rm -rf *manifest
+         rm -rf *tar.bz2
          mv *sysupgrade.bin 360T7-padavanonly-108M-mini-sysupgrade-$time.bin
          mv *factory.bin 360T7-padavanonly-108M-mini-factory-$time.bin
          echo "FIRMWARE=$PWD" >> $GITHUB_ENV
