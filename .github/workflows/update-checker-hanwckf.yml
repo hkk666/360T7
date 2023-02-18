@@ -1,4 +1,4 @@
-name: Update Checker
+name: Update Checker hanwckf
 
 env:
   REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x
