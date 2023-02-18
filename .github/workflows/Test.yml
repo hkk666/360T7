@@ -2,8 +2,7 @@ name: Test
 
 on:
   workflow_dispatch:
- #schedule:
- #- cron: '0 20 * * 1'
+
 env:
   TZ: Asia/Shanghai
   
@@ -15,7 +14,7 @@ jobs:
     - name: Generate release tag
       id: tag
       run: |
-         echo "https://github.com/hkk666/360T7/releases/tag/360T7-padavanonly-OpenWrt-mini-$time" >> body.txt
+         echo "body=$https://github.com/hkk666/360T7/releases/tag/360T7-padavanonly-OpenWrt-mini-$time" >> $GITHUB_ENV
     
     - name: Email notification
       uses: dawidd6/action-send-mail@v3
@@ -25,6 +24,6 @@ jobs:
          username: ${{ secrets.MAILUSERNAME }}
          password: ${{ secrets.MAILPASSWORD }}
          subject: 🎉GitHub Actions succeeded🎉
-         body: body.txt
+         body: ${{ env.body }}
          to: ${{ secrets.MAIL }}
          from: GitHub Actions For 360T7 OpenWrt
