@@ -158,7 +158,8 @@ jobs:
          username: ${{ secrets.MAILUSERNAME }}
          password: ${{ secrets.MAILPASSWORD }}
          subject: 🎉GitHub Actions succeeded🎉
-         body: https://github.com/hkk666/360T7/releases
+         body: hanwckf
+         https://github.com/hkk666/360T7/releases
          to: ${{ secrets.MAIL }}
          from: GitHub Actions For 360T7 OpenWrt
          
