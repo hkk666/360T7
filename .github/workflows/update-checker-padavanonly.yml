@@ -1,4 +1,4 @@
-name: Update Checker
+name: Update Checker padavanonly
 
 env:
   REPO_URL: https://github.com/padavanonly/immortalwrtARM
