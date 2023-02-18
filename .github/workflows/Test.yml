@@ -14,7 +14,8 @@ jobs:
     - name: Generate release tag
       id: tag
       run: |
-         echo "body=$https://github.com/hkk666/360T7/releases/tag/360T7-padavanonly-OpenWrt-mini-$time" >> $GITHUB_ENV
+         echo "time=$(date +%Y.%m.%d)" >> $GITHUB_ENV
+         echo "body=$ https://github.com/hkk666/360T7/releases/tag/360T7-padavanonly-OpenWrt-mini-$time" >> $GITHUB_ENV
     
     - name: Email notification
       uses: dawidd6/action-send-mail@v3
