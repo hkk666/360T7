@@ -139,6 +139,7 @@ jobs:
          Application：mwan3，ramfree，ua2f" >> release.txt
          echo "release_name=$release_name" >> $GITHUB_OUTPUT
          echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
+         echo "https://github.com/hkk666/360T7/releases/tag/360T7-padavanonly-OpenWrt-mini-$time" >> body.txt
          echo "status=success" >> $GITHUB_OUTPUT
         
     - name: Upload firmware to release
@@ -161,8 +162,7 @@ jobs:
          username: ${{ secrets.MAILUSERNAME }}
          password: ${{ secrets.MAILPASSWORD }}
          subject: 🎉GitHub Actions succeeded🎉
-         body: padavanonly
-         https://github.com/hkk666/360T7/releases
+         body_path: body.txt
          to: ${{ secrets.MAIL }}
          from: GitHub Actions For 360T7 OpenWrt
          
