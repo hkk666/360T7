@@ -1,0 +1,30 @@
+name: Test
+
+on:
+  workflow_dispatch:
+ #schedule:
+ #- cron: '0 20 * * 1'
+env:
+  TZ: Asia/Shanghai
+  
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    
+    steps:
+    - name: Generate release tag
+      id: tag
+      run: |
+         echo "https://github.com/hkk666/360T7/releases/tag/360T7-padavanonly-OpenWrt-mini-$time" >> body.txt
+    
+    - name: Email notification
+      uses: dawidd6/action-send-mail@v3
+      with:
+         server_address: smtp.163.com
+         server_port: 465
+         username: ${{ secrets.MAILUSERNAME }}
+         password: ${{ secrets.MAILPASSWORD }}
+         subject: 🎉GitHub Actions succeeded🎉
+         body: body.txt
+         to: ${{ secrets.MAIL }}
+         from: GitHub Actions For 360T7 OpenWrt
