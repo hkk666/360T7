@@ -117,7 +117,7 @@ jobs:
          rm -rf feeds.buildinfo
          rm -rf sha256sums
          rm -rf version.buildinfo
-         rm -rf package
+         rm -rf packages
          rm -rf *kernel.bin
          rm -rf *manifest
          mv *sysupgrade.bin 360T7-hanwckf-108M-mini-sysupgrade-$time.bin
