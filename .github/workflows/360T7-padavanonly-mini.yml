@@ -114,9 +114,7 @@ jobs:
       id: organize
       if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
-         cd openwrt/bin
-         tar -cvf packages.tar packages
-         mv packages.tar openwrt/bin/targets/mediatek/mt7981
+         tar -cvf openwrt/bin/targets/mediatek/mt7981/packages.tar openwrt/bin/packages
          cd openwrt/bin/targets/mediatek/mt7981
          rm -rf packages
          rm -rf feeds.buildinfo
@@ -137,7 +135,7 @@ jobs:
          release_name="360T7-padavanonly-OpenWrt-mini"
          echo "Gateway：192.168.50.1
          Password：password
-         Application：mwan3，ramfree" >> release.txt
+         Application：mwan3，ramfree，ua2f" >> release.txt
          echo "release_name=$release_name" >> $GITHUB_OUTPUT
          echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
          echo "status=success" >> $GITHUB_OUTPUT
