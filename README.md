@@ -53,7 +53,7 @@ GitHub Actions For 360T7 OpenWrt
 
 ![](doc/img/example6.png)
 
-前往 [Settings/Developer settings](https://github.com/settings/tokens/new) 创建 `GIT_USER_TOKEN` `GITHUB_TOKEN` 密钥，如果你需要定时检查源码并自动触发编译，还需要创建 `ACTIONS_TRIGGER_PAT` 密钥。密钥创建页面，填入名称，Expiration选择 `no expiration` ，Select scopes选择`workflows` `admin:repo_hook` ，点击 `Generate token` 即可创建成功。
+前往 [Settings/Developer settings](https://github.com/settings/tokens/new) 创建 `GITHUB_TOKEN` 密钥，如果你需要定时检查源码并自动触发编译，还需要创建 `ACTIONS_TRIGGER_PAT` 密钥。密钥创建页面，填入名称，Expiration选择 `no expiration` ，Select scopes选择`workflows` `admin:repo_hook` ，点击 `Generate token` 即可创建成功。
 
 实例图示：
 
@@ -73,17 +73,9 @@ GitHub Actions For 360T7 OpenWrt
 
 ![](doc/img/example5.png)
 
-### 5、其它密钥说明(非必需) 😳
-以下密钥在步骤3中填入即可，不是在步骤2创建，获取方法 [163邮箱开通SMTP](https://jingyan.baidu.com/article/c275f6ba33a95de33d7567d9.html)
+### 5、仓库读写权限 🤔
 
-如果你不需要邮箱通知，可以忽略该项，同时需要在 `360T7-hanwckf-mini.yml` `update-checker.yml` 删除邮箱通知部分。
 
-| MAILUSERNAME | 163邮箱账号 |  
-| :------------------: | :------------------: |
-| MAILPASSWORD | SMTP密钥 |
-| MAIL | 接收邮箱 |
-
-![](doc/img/example3.png)
 
 ## 特别鸣谢 🥰
 
