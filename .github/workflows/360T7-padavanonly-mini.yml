@@ -136,8 +136,8 @@ jobs:
          echo "Gateway：192.168.50.1
          Password：password
          Application：mwan3，ramfree，ua2f" >> release.txt
-         echo "release_tag=360T7-hanwckf-OpenWrt-mini-$(date +%Y.%m.%d)" >> $GITHUB_ENV
-         echo "release_name=360T7-hanwckf-OpenWrt-mini" >> $GITHUB_ENV
+         echo "release_tag=360T7-padavanonly-OpenWrt-mini-$(date +%Y.%m.%d)" >> $GITHUB_ENV
+         echo "release_name=360T7-padavanonly-OpenWrt-mini" >> $GITHUB_ENV
          echo "status=success" >> $GITHUB_OUTPUT
         
     - name: Upload firmware to release
