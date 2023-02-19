@@ -94,6 +94,8 @@ jobs:
          cd openwrt
          echo -e "$(nproc) thread compile"
          make -j$(nproc) || make -j1 V=s
+         echo "release_tag=360T7-hanwckf-OpenWrt-mini-$(date +%Y.%m.%d)" >> $GITHUB_ENV
+         echo "release_name=360T7-hanwckf-OpenWrt-mini" >> $GITHUB_ENV
          echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Check space usage
@@ -104,7 +106,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.compile.outputs.status == 'success' && !cancelled()
       with:
-         name: 360T7-hanwckf-mini-OpenWrt
+         name: 360T7-hanwckf-mini-OpenWrt-$(date +%Y.%m.%d)
          path: openwrt/bin
 
     - name: Organize files
@@ -113,35 +115,27 @@ jobs:
       run: |
          tar -cvf openwrt/bin/targets/mediatek/mt7981/packages.tar openwrt/bin/packages
          cd openwrt/bin/targets/mediatek/mt7981
+         rm -rf packages
          rm -rf feeds.buildinfo
          rm -rf sha256sums
          rm -rf version.buildinfo
-         rm -rf packages
          rm -rf *kernel.bin
          rm -rf *manifest
-         mv *sysupgrade.bin 360T7-hanwckf-108M-mini-sysupgrade-$time.bin
-         mv *factory.bin 360T7-hanwckf-108M-mini-factory-$time.bin
+         mv *sysupgrade.bin 360T7-hanwckf-108M-mini-sysupgrade-$(date +%Y.%m.%d).bin
+         mv *factory.bin 360T7-hanwckf-108M-mini-factory-$(date +%Y.%m.%d).bin
          echo "FIRMWARE=$PWD" >> $GITHUB_ENV
-         echo "status=success" >> $GITHUB_OUTPUT
-
-    - name: Generate release tag
-      id: tag
-      if: steps.compile.outputs.status == 'success' && !cancelled()
-      run: |
-         echo "Gateway：192.168.50.1
-         Password：password
-         Application：mwan3，ramfree，ua2f" >> release.txt
-         echo "release_tag=360T7-hanwckf-OpenWrt-mini-$(date +%Y.%m.%d)" >> $GITHUB_ENV
-         echo "release_name=360T7-hanwckf-OpenWrt-mini" >> $GITHUB_ENV
          echo "status=success" >> $GITHUB_OUTPUT
         
     - name: Upload firmware to release
       uses: softprops/action-gh-release@v1
-      if: steps.tag.outputs.status == 'success' && !cancelled()
+      if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-         name: ${{ env.release_name }} 
+         name: ${{ env.release_name }}
          tag_name: ${{ env.release_tag }}
-         body_path: release.txt
+         body: |
+             Gateway：192.168.50.1
+             Password：password
+             Application：mwan3，ramfree，ua2f
          files: ${{ env.FIRMWARE }}/*
 
     - name: Delete older releases
