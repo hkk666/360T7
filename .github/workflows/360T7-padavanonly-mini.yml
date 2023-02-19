@@ -18,8 +18,6 @@ env:
   CONFIG_FILE: ./doc/config/360T7-padavanonly-mini.config
   DIY_P1_SH: ./doc/diy/diy-360T7-hanwckf-1.sh
   DIY_P2_SH: ./doc/diy/diy-360T7-hanwckf-2.sh
-  UPLOAD_FIRMWARE: true
-  UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
   
 jobs:
@@ -42,8 +40,7 @@ jobs:
          sudo mkdir -p /workdir
          sudo chown $USER:$GROUPS /workdir
          echo "time=$(date +%Y.%m.%d)" >> $GITHUB_ENV
-         echo "body= https://github.com/hkk666/360T7/releases/tag/360T7-padavanonly-OpenWrt-mini-$(date +%Y.%m.%d)" >> $GITHUB_ENV
-    
+
     - name: Clone source code
       working-directory: /workdir
       run: |
@@ -149,19 +146,6 @@ jobs:
          body_path: release.txt
          files: ${{ env.FIRMWARE }}/*
 
-    - name: Email notification
-      uses: dawidd6/action-send-mail@v3
-      if: steps.organize.outputs.status == 'success' && !cancelled()
-      with:
-         server_address: smtp.163.com
-         server_port: 465
-         username: ${{ secrets.MAILUSERNAME }}
-         password: ${{ secrets.MAILPASSWORD }}
-         subject: 🎉GitHub Actions succeeded🎉
-         body: ${{ env.body }}
-         to: ${{ secrets.MAIL }}
-         from: GitHub Actions For 360T7 OpenWrt
-         
     - name: Delete older releases
       uses: dev-drprasad/delete-older-releases@v0.2.1
       with:
