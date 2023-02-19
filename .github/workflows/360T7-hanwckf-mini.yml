@@ -133,7 +133,6 @@ jobs:
          Application：mwan3，ramfree，ua2f" >> release.txt
          echo "release_tag=360T7-hanwckf-OpenWrt-mini-$(date +%Y.%m.%d)" >> $GITHUB_ENV
          echo "release_name=360T7-hanwckf-OpenWrt-mini" >> $GITHUB_ENV
-         echo "body= https://github.com/hkk666/360T7/releases/tag/360T7-hanwckf-OpenWrt-mini-$(date +%Y.%m.%d)" >> $GITHUB_ENV
          echo "status=success" >> $GITHUB_OUTPUT
         
     - name: Upload firmware to release
@@ -145,19 +144,6 @@ jobs:
          body_path: release.txt
          files: ${{ env.FIRMWARE }}/*
 
-    - name: Email notification
-      uses: dawidd6/action-send-mail@v3
-      if: steps.organize.outputs.status == 'success' && !cancelled()
-      with:
-         server_address: smtp.163.com
-         server_port: 465
-         username: ${{ secrets.MAILUSERNAME }}
-         password: ${{ secrets.MAILPASSWORD }}
-         subject: 🎉GitHub Actions succeeded🎉
-         body: ${{ env.body }}
-         to: ${{ secrets.MAIL }}
-         from: GitHub Actions For 360T7 OpenWrt
-         
     - name: Delete older releases
       uses: dev-drprasad/delete-older-releases@v0.2.1
       with:
