@@ -50,7 +50,7 @@ GitHub Actions For 360T7 OpenWrt
 
 ### 2、仓库读写权限 🤔
 
-前往Fork之后的仓库页面，按下图实例图示点击，填入上述密钥即可，`GITHUB_TOKEN`不需要填入。 
+前往Fork之后的仓库页面，按下图实例图示点击，更改读写权限。 
 
 ![](doc/img/example7.png)
 
