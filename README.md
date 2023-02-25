@@ -48,35 +48,19 @@ GitHub Actions For 360T7 OpenWrt
 ### 1、Fork本仓库 📌
 右上角 `Fork`  `star`可以给予鼓励。
 
-### 2、创建密钥 🔐
-前往 [Settings/Developer settings](https://github.com/settings/tokens/new) 创建 `GITHUB_TOKEN` 密钥，如果你需要定时检查源码并自动触发编译，还需要创建 `ACTIONS_TRIGGER_PAT` 密钥。密钥创建页面，填入名称，Expiration选择 `no expiration` ，Select scopes选择`workflows` `admin:repo_hook` ，点击 `Generate token` 即可创建成功。
-
-实例图示：
-
-![](doc/img/example1.png)
-
-🚨 特别注意：密钥只显示一次，创建成功后请务必保存好，否则需要重新创建。如果你不需要创建 `ACTIONS_TRIGGER_PAT` 密钥，则需要删除 `update-checker.yml` 下图部分。
-
-![](doc/img/example6.png)
-
-### 3、填写密钥 ✍🏻
+### 2、仓库读写权限 🤔
 
 前往Fork之后的仓库页面，按下图实例图示点击，填入上述密钥即可，`GITHUB_TOKEN`不需要填入。 
 
-![](doc/img/example2.png)
+![](doc/img/example7.png)
 
-### 4、开始编译 🚀
+### 3、开始编译 🚀
 
 前往Fork之后的仓库页面，按下图实例图示点击，等待编译结果即可。
 
 ![](doc/img/example4.png)
 
 ![](doc/img/example5.png)
-
-### 5、仓库读写权限 🤔
-前往 [settings/actions](https://github.com/hkk666/360T7/settings/actions) 更改读写权限
-
-![](doc/img/example7.png)
 
 ## 特别鸣谢 🥰
 
