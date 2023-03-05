@@ -82,7 +82,7 @@ jobs:
          name: ${{ env.release_name }}
          tag_name: ${{ env.release_tag }}
          body: |
-         GL.inet
+             GL.inet
          files: ${{ env.FIRMWARE }}/*
 
     - name: Delete older releases
