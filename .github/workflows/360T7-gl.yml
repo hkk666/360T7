@@ -15,16 +15,12 @@ jobs:
       contents: write
       
     steps:
-    - name: Checkout
-      uses: actions/checkout@main
-    
     - name: Prepare environment
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
          sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
-         sudo apt-get update
-         sudo apt install binutils bzip2 diff find flex gawk gcc-6+ getopt grep install libc-dev libz-dev make4.1+ perl python3.6+ rsync subversion unzip which libncurses5-dev zlib1g-dev gawk gcc-multilib g++-multilib flex git-core gettext libssl-dev ocaml sharutils re2c -y
+         sudo bash -c 'bash <(curl -s https://build-scripts.immortalwrt.eu.org/init_build_environment.sh)'
          sudo timedatectl set-timezone "Asia/Shanghai"
          sudo mkdir -p /workdir
          sudo chown $USER:$GROUPS /workdir
@@ -35,16 +31,6 @@ jobs:
          df -hT $PWD
          git clone https://github.com/gl-inet/glinet4.x.git
          ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-    
-    - name: Cache
-      uses: klever1988/cachewrtbuild@main
-      with:
-         ccache: 'true'
-         mixkey: '360T7-hanwckf'
-         toolchain: 'true'
-         skip: 'true'
-         clean: ${{github.event.inputs.clean}}
-         prefix: ${{ github.workspace }}/openwrt
 
     - name: Compile the firmware
       id: compile
