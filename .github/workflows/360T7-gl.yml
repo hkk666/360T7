@@ -29,14 +29,14 @@ jobs:
       working-directory: /workdir
       run: |
          df -hT $PWD
-         git clone https://github.com/gl-inet/glinet4.x.git
+         git clone https://github.com/gl-inet/glinet4.x.git openwrt
          ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Compile the firmware
       id: compile
       run: |
-         cp ./glinet4.x/pkg_config/gl_pkg_config_mt7981_mt3000.mk  ./glinet4.x/mt7981/gl_pkg_config.mk
-         ./scripts/gen_config.py target_mt7981_360t7-108M glinet_depends
+         cp openwrt/glinet4.x/pkg_config/gl_pkg_config_mt7981_mt3000.mk  openwrt/glinet4.x/mt7981/gl_pkg_config.mk
+         openwrt/scripts/gen_config.py target_mt7981_360t7-108M glinet_depends
          echo -e "$(nproc) thread compile"
          make -j$(nproc) || make -j1 V=s
          echo "release_tag=360T7-GL-OpenWrt-mini-$(date +%Y.%m.%d)" >> $GITHUB_ENV
