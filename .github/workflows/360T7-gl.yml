@@ -1,4 +1,4 @@
-name: 360T7-hanwckf-mini
+name: 360T7-Gl.inet
 
 on:
   repository_dispatch:
