@@ -23,7 +23,7 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
          sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
-         sudo apt update
+         sudo apt-get update
          sudo apt install binutils bzip2 diff find flex gawk gcc-6+ getopt grep install libc-dev libz-dev make4.1+ perl python3.6+ rsync subversion unzip which libncurses5-dev zlib1g-dev gawk gcc-multilib g++-multilib flex git-core gettext libssl-dev ocaml sharutils re2c -y
          sudo timedatectl set-timezone "Asia/Shanghai"
          sudo mkdir -p /workdir
