@@ -1,0 +1,74 @@
+name: 360T7-hanwckf-mini
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      clean:
+         description: 'clean ccache'
+         default: 'false'
+
+  #schedule:
+  #- cron: 0 17 * * 1
+
+env:
+  TZ: Asia/Shanghai
+  
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+      
+    steps:
+    
+    - name: Prepare environment
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
+         sudo apt-get update
+         sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3.5 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget libncurses5:i386 libelf1:i386 lib32z1 lib32stdc++6 gtk-doc-tools intltool binutils-dev cmake lzma liblzma-dev lzma-dev uuid-dev liblzo2-dev xsltproc dos2unix libstdc++5 docbook-xsl-* sharutils autogen shtool gengetopt libltdl-dev libtool-bin
+         sudo timedatectl set-timezone "$TZ"
+         sudo mkdir -p /doc
+         sudo chown $USER:$GROUPS /doc
+    
+    - name: Clone source code
+      working-directory: /doc
+      run: |
+         df -hT $PWD
+         git clone https://github.com/stkuroneko/asuswrt-ipq6018.git
+         git clone https://github.com/SWRT-dev/qca-toolchains
+         ln -sf /doc/qca-toolchains $GITHUB_WORKSPACE/qca-toolchains
+         cd qca-toolchains
+         sudo ln -sf $(pwd)/openwrt-gcc520_musl.arm /opt/
+         
+    - name: Cache
+      uses: klever1988/cachewrtbuild@main
+      with:
+         ccache: 'true'
+         mixkey: 'asus'
+         toolchain: 'true'
+         skip: 'true'
+         clean: ${{github.event.inputs.clean}}
+         prefix: ${{ github.workspace }}/qca-toolchains
+
+    - name: Compile the firmware
+      id: compile
+      run: |
+         cd ../asuswrt-ipq6018/release/src-qca-cypress
+         make rt-360v6
+         echo "release_tag=360V6-ASUS-$(date +%Y.%m.%d)" >> $GITHUB_ENV
+         echo "release_name=ASUS" >> $GITHUB_ENV
+         echo "status=success" >> $GITHUB_OUTPUT
+
+    - name: Check space usage
+      if: (!cancelled())
+      run: df -hT
+
+    - name: Upload firmware directory
+      uses: actions/upload-artifact@main
+      if: steps.compile.outputs.status == 'success' && !cancelled()
+      with:
+         name: ASUS-$(date +%Y.%m.%d)
+         path: release/src-qca-cypress/image
