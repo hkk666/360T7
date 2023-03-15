@@ -106,7 +106,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.compile.outputs.status == 'success' && !cancelled()
       with:
-         name: 360T7-hanwckf-mini-OpenWrt-$(date +%Y.%m.%d)
+         name: ${{ env.release_tag }}
          path: openwrt/bin
 
     - name: Organize files
