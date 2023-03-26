@@ -68,6 +68,8 @@ GitHub Actions For 360T7 OpenWrt
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | <img width="80" src="https://avatars.githubusercontent.com/u/31687149?v=4"/> | <img width="80" src="https://avatars.githubusercontent.com/u/22235437?v=4" /> | <img width="80" src="https://avatars.githubusercontent.com/u/31647663?v=4" /> | <img width="80" src="https://avatars.githubusercontent.com/u/25927179?v=4" /> | <img width="80" src="https://avatars.githubusercontent.com/u/31370133?v=4"/> | <img width="80" src="https://avatars.githubusercontent.com/u/56048681?v=4" /> | <img width="80" src="https://avatars.githubusercontent.com/u/27666983?v=4" /> | <img width="80" src="https://avatars.githubusercontent.com/u/83120842?v=4" /> |
 
+## Star History
+
 <hr>
  
 [![Star History Chart](https://api.star-history.com/svg?repos=hkk666/360T7&type=Date)](https://star-history.com/#bytebase/star-history&Date)
