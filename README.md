@@ -21,7 +21,8 @@ GitHub Actions For 360T7 OpenWrt
 ![openwrt](doc/img/openwrt.png)
 
 ## 友情提醒 🤣
-此仓库只是拉取源码进行编译，本人并不会修复相关问题！如果你遇到问题，可以提issues，我会尽力帮助你。
+此仓库只是拉取源码进行编译，本人并不会修复相关问题！
+源码更新，我也会点一下action.
 
 ## 目录介绍 📖
 
